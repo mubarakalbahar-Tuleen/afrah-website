@@ -51,15 +51,69 @@ body {
 a { text-decoration: none; color: inherit; }
 
 /* ========================
-   GEOMETRIC TEXTURE
+   ARABESQUE TEXTURE
 ======================== */
 .geo-texture {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  opacity: 0.03;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='none' stroke='%233a342a' stroke-width='0.5'%3E%3Cpath d='M40 0 L80 40 L40 80 L0 40Z'/%3E%3Cpath d='M40 15 L65 40 L40 65 L15 40Z'/%3E%3Ccircle cx='40' cy='40' r='7'/%3E%3C/g%3E%3C/svg%3E");
-  background-size: 80px 80px;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cg fill='none' stroke='%233a342a' stroke-width='0.6'%3E%3Ccircle cx='60' cy='60' r='40'/%3E%3Ccircle cx='60' cy='60' r='28'/%3E%3Ccircle cx='60' cy='60' r='16'/%3E%3Cpath d='M60 20 Q80 40 60 60 Q40 40 60 20Z'/%3E%3Cpath d='M60 60 Q80 80 60 100 Q40 80 60 60Z'/%3E%3Cpath d='M20 60 Q40 40 60 60 Q40 80 20 60Z'/%3E%3Cpath d='M60 60 Q80 40 100 60 Q80 80 60 60Z'/%3E%3Cpath d='M60 20 L100 60 L60 100 L20 60Z'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 120px 120px;
+}
+
+/* ========================
+   DECORATIVE ELEMENTS
+======================== */
+.arabesque-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin: 0 auto;
+  padding: 1.5rem 0;
+  max-width: 300px;
+  opacity: 0.5;
+}
+
+.arabesque-divider::before,
+.arabesque-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to var(--dir, left), var(--terracotta-soft), transparent);
+}
+
+.arabesque-divider::after { --dir: right; }
+
+.arabesque-divider svg {
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+}
+
+.book-ornament {
+  position: absolute;
+  pointer-events: none;
+  opacity: 0.06;
+  z-index: 0;
+}
+
+.book-ornament svg {
+  width: 100%;
+  height: 100%;
+}
+
+.calligraphy-accent {
+  font-family: var(--ff-arabic);
+  position: absolute;
+  pointer-events: none;
+  opacity: 0.04;
+  font-size: 8rem;
+  line-height: 1;
+  color: var(--terracotta);
+  z-index: 0;
+  white-space: nowrap;
 }
 
 /* ========================
@@ -842,6 +896,15 @@ footer .en {
 
 <!-- Hero -->
 <section class="hero">
+  <div class="calligraphy-accent" style="bottom: 10%; left: 5%; opacity: 0.03; font-size: 12rem; color: rgba(250,246,239,0.06);">شعر</div>
+  <div class="book-ornament" style="top: 15%; left: 8%; width: 150px; height: 150px;">
+    <svg viewBox="0 0 100 100" fill="none" stroke="rgba(250,246,239,0.08)" stroke-width="0.8">
+      <path d="M15 85 L15 15 Q50 5 50 15 L50 85 Q50 75 15 85Z"/>
+      <path d="M85 85 L85 15 Q50 5 50 15 L50 85 Q50 75 85 85Z"/>
+      <line x1="25" y1="30" x2="45" y2="28" /><line x1="25" y1="40" x2="45" y2="38" /><line x1="25" y1="50" x2="45" y2="48" /><line x1="25" y1="60" x2="45" y2="58" />
+      <line x1="55" y1="28" x2="75" y2="30" /><line x1="55" y1="38" x2="75" y2="40" /><line x1="55" y1="48" x2="75" y2="50" /><line x1="55" y1="58" x2="75" y2="60" />
+    </svg>
+  </div>
   <div class="hero-content">
     <p class="hero-tag">شاعرة كويتية · مثقفة · مراقبة · عاشقة للطبيعة</p>
     <h1 class="hero-name-ar">أفراح مبارك<br>الصباح</h1>
@@ -862,9 +925,29 @@ footer .en {
   </div>
 </section>
 
+<!-- Arabesque Divider -->
+<div class="arabesque-divider">
+  <svg viewBox="0 0 50 50" fill="none" stroke="var(--terracotta-soft)" stroke-width="0.8">
+    <path d="M25 5 Q35 15 25 25 Q15 15 25 5Z"/>
+    <path d="M25 25 Q35 35 25 45 Q15 35 25 25Z"/>
+    <path d="M5 25 Q15 15 25 25 Q15 35 5 25Z"/>
+    <path d="M25 25 Q35 15 45 25 Q35 35 25 25Z"/>
+    <circle cx="25" cy="25" r="4"/>
+  </svg>
+</div>
+
 <!-- About -->
 <section class="about-section" id="about">
   <div class="geo-texture"></div>
+  <div class="calligraphy-accent" style="top: -20px; right: -40px; font-size: 10rem;">قصيدة</div>
+  <div class="book-ornament" style="bottom: 30px; left: 20px; width: 120px; height: 120px;">
+    <svg viewBox="0 0 100 100" fill="none" stroke="var(--terracotta-soft)" stroke-width="0.7" opacity="0.12">
+      <path d="M20 80 L20 20 Q50 12 50 20 L50 80 Q50 72 20 80Z"/>
+      <path d="M80 80 L80 20 Q50 12 50 20 L50 80 Q50 72 80 80Z"/>
+      <path d="M10 82 L10 18 C10 16 12 14 14 14 L20 14" stroke-width="1"/>
+      <path d="M90 82 L90 18 C90 16 88 14 86 14 L80 14" stroke-width="1"/>
+    </svg>
+  </div>
   <div class="section-center">
     <p class="section-label reveal"><span class="en">About</span> عنّي</p>
     <h2 class="section-title-ar reveal">صوت بين عالمَين</h2>
@@ -884,8 +967,32 @@ footer .en {
   </div>
 </section>
 
+<!-- Arabesque Divider -->
+<div class="arabesque-divider">
+  <svg viewBox="0 0 50 50" fill="none" stroke="var(--terracotta-soft)" stroke-width="0.8">
+    <path d="M25 5 Q35 15 25 25 Q15 15 25 5Z"/>
+    <path d="M25 25 Q35 35 25 45 Q15 35 25 25Z"/>
+    <path d="M5 25 Q15 15 25 25 Q15 35 5 25Z"/>
+    <path d="M25 25 Q35 15 45 25 Q35 35 25 25Z"/>
+    <circle cx="25" cy="25" r="4"/>
+  </svg>
+</div>
+
 <!-- Books -->
 <section class="books-section" id="books">
+  <div class="calligraphy-accent" style="top: 10px; left: -30px; font-size: 9rem;">كتب</div>
+  <div class="book-ornament" style="top: 40px; right: 20px; width: 180px; height: 140px;">
+    <svg viewBox="0 0 180 140" fill="none" stroke="var(--terracotta-soft)" stroke-width="0.6" opacity="0.08">
+      <path d="M30 120 L30 20 Q90 8 90 20 L90 120 Q90 108 30 120Z"/>
+      <path d="M150 120 L150 20 Q90 8 90 20 L90 120 Q90 108 150 120Z"/>
+      <line x1="42" y1="40" x2="78" y2="36"/><line x1="42" y1="55" x2="78" y2="51"/><line x1="42" y1="70" x2="78" y2="66"/><line x1="42" y1="85" x2="78" y2="81"/>
+      <line x1="102" y1="36" x2="138" y2="40"/><line x1="102" y1="51" x2="138" y2="55"/><line x1="102" y1="66" x2="138" y2="70"/><line x1="102" y1="81" x2="138" y2="85"/>
+      <path d="M15 122 Q15 14 25 14 L30 14" stroke-width="1.2"/>
+      <path d="M165 122 Q165 14 155 14 L150 14" stroke-width="1.2"/>
+      <path d="M8 124 Q8 12 20 12 L25 12" stroke-width="0.8" opacity="0.5"/>
+      <path d="M172 124 Q172 12 160 12 L155 12" stroke-width="0.8" opacity="0.5"/>
+    </svg>
+  </div>
   <div class="section-center">
     <p class="section-label reveal"><span class="en">Books</span> الإصدارات</p>
     <h2 class="section-title-ar reveal">الكتب</h2>
@@ -923,6 +1030,17 @@ footer .en {
   </div>
 </section>
 
+<!-- Arabesque Divider -->
+<div class="arabesque-divider">
+  <svg viewBox="0 0 50 50" fill="none" stroke="var(--terracotta-soft)" stroke-width="0.8">
+    <path d="M25 5 Q35 15 25 25 Q15 15 25 5Z"/>
+    <path d="M25 25 Q35 35 25 45 Q15 35 25 25Z"/>
+    <path d="M5 25 Q15 15 25 25 Q15 35 5 25Z"/>
+    <path d="M25 25 Q35 15 45 25 Q35 35 25 25Z"/>
+    <circle cx="25" cy="25" r="4"/>
+  </svg>
+</div>
+
 <!-- Journal -->
 <section class="journal-section" id="journal">
   <div class="section-center">
@@ -942,6 +1060,7 @@ footer .en {
 <section class="contact-section" id="contact">
   <div class="geo-texture"></div>
   <div class="section-center">
+    <div class="calligraphy-accent" style="bottom: 20px; left: 5%; font-size: 11rem; color: rgba(250,246,239,0.04);">أدب</div>
     <div class="contact-inner">
       <p class="section-label reveal"><span class="en">Contact</span> تواصل</p>
       <h2 class="section-title-ar reveal">تواصل معي</h2>
