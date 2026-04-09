@@ -67,10 +67,6 @@
 
     /* ===== LANGUAGE TOGGLE ===== */
     .lang-toggle {
-      position: fixed;
-      top: 1.5rem;
-      right: 1.5rem;
-      z-index: 1000;
       display: flex;
       border: 1.5px solid var(--gold-light);
       border-radius: 100px;
@@ -79,11 +75,13 @@
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
       box-shadow: 0 2px 20px rgba(0,0,0,0.06);
+      margin-left: auto;
+      flex-shrink: 0;
     }
 
     html[dir="rtl"] .lang-toggle {
-      right: auto;
-      left: 1.5rem;
+      margin-left: 0;
+      margin-right: auto;
     }
 
     .lang-btn {
@@ -112,10 +110,10 @@
       left: 0;
       right: 0;
       z-index: 900;
-      padding: 1.5rem 8rem 1.5rem 2.5rem;
+      padding: 1.5rem 2.5rem;
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      gap: 1.5rem;
       transition: all 0.5s var(--ease-out);
     }
 
@@ -124,11 +122,8 @@
       backdrop-filter: blur(14px);
       -webkit-backdrop-filter: blur(14px);
       box-shadow: 0 1px 30px rgba(0,0,0,0.04);
-      padding: 0.9rem 8rem 0.9rem 2.5rem;
+      padding: 0.9rem 2.5rem;
     }
-
-    html[dir="rtl"] nav { padding: 1.5rem 2.5rem 1.5rem 8rem; }
-    html[dir="rtl"] nav.scrolled { padding: 0.9rem 2.5rem 0.9rem 8rem; }
 
     .nav-logo {
       font-family: var(--font-display-en);
@@ -635,12 +630,6 @@
 </head>
 <body>
 
-  <!-- Language Toggle -->
-  <div class="lang-toggle">
-    <button class="lang-btn active" onclick="setLang('en')">EN</button>
-    <button class="lang-btn" onclick="setLang('ar')">عربي</button>
-  </div>
-
   <!-- Navigation -->
   <nav id="navbar">
     <a href="#" class="nav-logo">
@@ -656,6 +645,11 @@
       <li><a href="#blog" onclick="closeMenu()"><span data-lang="en">Blog</span><span data-lang="ar">المدوّنة</span></a></li>
       <li><a href="#contact" onclick="closeMenu()"><span data-lang="en">Contact</span><span data-lang="ar">تواصل</span></a></li>
     </ul>
+    <!-- Language Toggle -->
+    <div class="lang-toggle">
+      <button class="lang-btn active" onclick="setLang('en')">EN</button>
+      <button class="lang-btn" onclick="setLang('ar')">عربي</button>
+    </div>
   </nav>
 
   <!-- Hero -->
