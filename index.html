@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Afrah Mubarak Al Sabah — Poet</title>
+  <meta name="description" content="Official website of Afrah Mubarak Al Sabah — Poet, Intellectual, Observer, Nature Lover">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --sand-50: #fdf8f0;
+      --sand-100: #f5e6cc;
+      --sand-200: #e8d1a8;
+      --gold: #b8860b;
+      --gold-light: #d4a843;
+      --gold-pale: #f0e4c8;
+      --ink: #2a1f14;
+      --ink-light: #5c4a38;
+      --ink-lighter: #9a8a78;
+      --cream: #faf6ee;
+      --cream-dark: #f0e8d8;
+      --white: #fffcf5;
+      --accent: #6b4c2a;
+
+      --font-display-en: 'Cormorant Garamond', 'Georgia', serif;
+      --font-body-en: 'Cormorant Garamond', 'Georgia', serif;
+      --font-display-ar: 'Amiri', serif;
+      --font-body-ar: 'Noto Naskh Arabic', 'Amiri', serif;
+
+      --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-body-en);
+      background: var(--cream);
+      color: var(--ink);
+      overflow-x: hidden;
+      font-size: 18px;
+      line-height: 1.75;
+    }
+
+    html[dir="rtl"] body {
+      font-family: var(--font-body-ar);
+      font-size: 19px;
+      line-height: 1.9;
+    }
+
+    html[dir="rtl"] h1, html[dir="rtl"] h2, html[dir="rtl"] h3 {
+      font-family: var(--font-display-ar);
+    }
+
+    /* Subtle grain overlay */
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 9999;
+    }
+
+    /* ===== LANGUAGE TOGGLE ===== */
+    .lang-toggle {
+      position: fixed;
+      top: 1.5rem;
+      right: 1.5rem;
+      z-index: 1000;
+      display: flex;
+      border: 1.5px solid var(--gold-light);
+      border-radius: 100px;
+      overflow: hidden;
+      background: rgba(250, 246, 238, 0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow: 0 2px 20px rgba(0,0,0,0.06);
+    }
+
+    html[dir="rtl"] .lang-toggle {
+      right: auto;
+      left: 1.5rem;
+    }
+
+    .lang-btn {
+      border: none;
+      background: transparent;
+      padding: 0.5rem 1.2rem;
+      font-size: 0.82rem;
+      cursor: pointer;
+      font-family: var(--font-display-en);
+      color: var(--ink-lighter);
+      transition: all 0.4s var(--ease-out);
+      letter-spacing: 0.06em;
+    }
+
+    .lang-btn.active {
+      background: var(--gold);
+      color: var(--white);
+    }
+
+    .lang-btn:hover:not(.active) { color: var(--gold); }
+
+    /* ===== NAVIGATION ===== */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 900;
+      padding: 1.5rem 2.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: all 0.5s var(--ease-out);
+    }
+
+    nav.scrolled {
+      background: rgba(250, 246, 238, 0.94);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      box-shadow: 0 1px 30px rgba(0,0,0,0.04);
+      padding: 0.9rem 2.5rem;
+    }
+
+    .nav-logo {
+      font-family: var(--font-display-en);
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--ink);
+      text-decoration: none;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    html[dir="rtl"] .nav-logo {
+      font-family: var(--font-display-ar);
+      text-transform: none;
+      font-size: 1.3rem;
+      letter-spacing: 0;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.2rem;
+      list-style: none;
+      align-items: center;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--ink-light);
+      font-size: 0.85rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    html[dir="rtl"] .nav-links a {
+      font-family: var(--font-body-ar);
+      text-transform: none;
+      font-size: 0.95rem;
+      letter-spacing: 0;
+    }
+
+    .nav-links a:hover { color: var(--gold); }
+
+    /* Mobile menu */
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      width: 28px;
+      height: 20px;
+      position: relative;
+      z-index: 950;
+    }
+
+    .menu-toggle span {
+      display: block;
+      width: 100%;
+      height: 1.5px;
+      background: var(--ink);
+      position: absolute;
+      left: 0;
+      transition: all 0.3s var(--ease-out);
+    }
+
+    .menu-toggle span:nth-child(1) { top: 0; }
+    .menu-toggle span:nth-child(2) { top: 50%; transform: translateY(-50%); }
+    .menu-toggle span:nth-child(3) { bottom: 0; }
+
+    .menu-toggle.open span:nth-child(1) { top: 50%; transform: translateY(-50%) rotate(45deg); }
+    .menu-toggle.open span:nth-child(2) { opacity: 0; }
+    .menu-toggle.open span:nth-child(3) { bottom: 50%; transform: translateY(50%) rotate(-45deg); }
+
+    @media (max-width: 768px) {
+      .menu-toggle { display: block; }
+      .nav-links {
+        position: fixed;
+        inset: 0;
+        background: var(--cream);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.4s var(--ease-out);
+      }
+      .nav-links.open {
+        opacity: 1;
+        pointer-events: all;
+      }
+      .nav-links a { font-size: 1.2rem; }
+      html[dir="rtl"] .nav-links a { font-size: 1.4rem; }
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 6rem 2rem 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -20%;
+      left: -10%;
+      width: 120%;
+      height: 140%;
+      background: radial-gradient(ellipse at 30% 20%, rgba(184, 134, 11, 0.06) 0%, transparent 60%),
+                  radial-gradient(ellipse at 70% 80%, rgba(184, 134, 11, 0.04) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    .hero-flourish {
+      width: 60px;
+      height: 1.5px;
+      background: var(--gold-light);
+      margin: 0 auto 2rem;
+      opacity: 0;
+      animation: fadeSlideUp 1s 0.3s var(--ease-out) forwards;
+    }
+
+    .hero-name {
+      font-family: var(--font-display-en);
+      font-size: clamp(2.8rem, 6vw, 5rem);
+      font-weight: 300;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ink);
+      line-height: 1.15;
+      opacity: 0;
+      animation: fadeSlideUp 1s 0.5s var(--ease-out) forwards;
+    }
+
+    html[dir="rtl"] .hero-name {
+      font-family: var(--font-display-ar);
+      text-transform: none;
+      letter-spacing: 0;
+      font-size: clamp(2.8rem, 6vw, 4.5rem);
+      font-weight: 700;
+    }
+
+    .hero-subtitle {
+      font-size: 1.05rem;
+      color: var(--ink-lighter);
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      margin-top: 1.2rem;
+      font-weight: 400;
+      opacity: 0;
+      animation: fadeSlideUp 1s 0.7s var(--ease-out) forwards;
+    }
+
+    html[dir="rtl"] .hero-subtitle {
+      font-family: var(--font-body-ar);
+      text-transform: none;
+      letter-spacing: 0.05em;
+      font-size: 1.15rem;
+    }
+
+    .hero-quote {
+      max-width: 600px;
+      margin: 3rem auto 0;
+      font-style: italic;
+      font-size: 1.15rem;
+      color: var(--ink-light);
+      line-height: 1.9;
+      opacity: 0;
+      animation: fadeSlideUp 1s 0.9s var(--ease-out) forwards;
+    }
+
+    html[dir="rtl"] .hero-quote {
+      font-family: var(--font-display-ar);
+      font-size: 1.35rem;
+    }
+
+    .hero-scroll {
+      margin-top: 4rem;
+      opacity: 0;
+      animation: fadeSlideUp 1s 1.1s var(--ease-out) forwards;
+    }
+
+    .hero-scroll a {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      text-decoration: none;
+      color: var(--ink-lighter);
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+
+    .scroll-line {
+      width: 1px;
+      height: 40px;
+      background: var(--gold-light);
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 0.3; transform: scaleY(0.6); }
+      50% { opacity: 1; transform: scaleY(1); }
+    }
+
+    @keyframes fadeSlideUp {
+      from { opacity: 0; transform: translateY(25px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ===== SECTIONS ===== */
+    section { padding: 7rem 0; }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .section-label {
+      font-size: 0.75rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    html[dir="rtl"] .section-label {
+      font-family: var(--font-body-ar);
+      text-transform: none;
+      letter-spacing: 0.05em;
+      font-size: 0.9rem;
+    }
+
+    .section-title {
+      font-family: var(--font-display-en);
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 300;
+      color: var(--ink);
+      line-height: 1.2;
+      margin-bottom: 2rem;
+    }
+
+    html[dir="rtl"] .section-title {
+      font-family: var(--font-display-ar);
+      font-weight: 700;
+    }
+
+    .gold-rule {
+      width: 50px;
+      height: 1.5px;
+      background: var(--gold-light);
+      margin-bottom: 2.5rem;
+    }
+
+    /* ===== ABOUT ===== */
+    .about { background: var(--white); }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 5rem;
+      align-items: center;
+    }
+
+    .about-photo {
+      aspect-ratio: 3/4;
+      background: linear-gradient(135deg, var(--sand-100), var(--cream-dark));
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .about-photo::after {
+      content: '';
+      position: absolute;
+      inset: 8px;
+      border: 1px solid var(--gold-light);
+      border-radius: 2px;
+      opacity: 0.5;
+    }
+
+    .photo-placeholder {
+      color: var(--ink-lighter);
+      font-style: italic;
+      font-size: 0.95rem;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    .about-text {
+      margin-bottom: 1.2rem;
+      color: var(--ink-light);
+    }
+
+    @media (max-width: 768px) {
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+      .about-photo {
+        max-width: 350px;
+        margin: 0 auto;
+      }
+    }
+
+    /* ===== BOOKS ===== */
+    .books-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3rem;
+      margin-top: 3rem;
+    }
+
+    .book-card { text-align: center; }
+
+    .book-cover {
+      aspect-ratio: 2/3;
+      background: linear-gradient(160deg, var(--sand-100), var(--cream-dark), var(--sand-200));
+      border-radius: 3px;
+      margin-bottom: 1.5rem;
+      box-shadow: 4px 6px 20px rgba(0,0,0,0.08), 1px 1px 0 var(--gold-pale);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.5s var(--ease-out), box-shadow 0.5s var(--ease-out);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .book-cover::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 3px;
+      background: linear-gradient(to bottom, var(--gold-light), var(--gold), var(--gold-light));
+      opacity: 0.6;
+    }
+
+    .book-cover:hover {
+      transform: translateY(-6px);
+      box-shadow: 6px 12px 30px rgba(0,0,0,0.12), 1px 1px 0 var(--gold-pale);
+    }
+
+    .book-cover-placeholder {
+      color: var(--ink-lighter);
+      font-style: italic;
+      font-size: 0.85rem;
+      padding: 1.5rem;
+      text-align: center;
+    }
+
+    .book-title {
+      font-family: var(--font-display-en);
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 0.5rem;
+    }
+
+    html[dir="rtl"] .book-title {
+      font-family: var(--font-display-ar);
+      font-size: 1.35rem;
+    }
+
+    .book-desc {
+      font-size: 0.92rem;
+      color: var(--ink-lighter);
+      line-height: 1.6;
+    }
+
+    @media (max-width: 768px) {
+      .books-grid {
+        grid-template-columns: 1fr;
+        max-width: 300px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+
+    /* ===== BLOG ===== */
+    .blog { background: var(--white); }
+
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2.5rem;
+      margin-top: 3rem;
+    }
+
+    .blog-placeholder {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 4rem 2rem;
+      color: var(--ink-lighter);
+      font-style: italic;
+    }
+
+    @media (max-width: 768px) {
+      .blog-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ===== CONTACT ===== */
+    .contact { text-align: center; }
+
+    .contact-text {
+      max-width: 550px;
+      margin: 0 auto 3rem;
+      color: var(--ink-light);
+    }
+
+    .contact-email {
+      display: inline-block;
+      font-family: var(--font-display-en);
+      font-size: 1.4rem;
+      color: var(--gold);
+      text-decoration: none;
+      letter-spacing: 0.04em;
+      padding-bottom: 2px;
+      border-bottom: 1.5px solid rgba(184, 134, 11, 0.3);
+      transition: all 0.3s;
+      margin-bottom: 3rem;
+    }
+
+    .contact-email:hover {
+      color: var(--ink);
+      border-bottom-color: var(--ink);
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .social-link {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      text-decoration: none;
+      color: var(--ink-light);
+      font-size: 0.9rem;
+      letter-spacing: 0.06em;
+      transition: color 0.3s;
+    }
+
+    .social-link:hover { color: var(--gold); }
+
+    .social-link svg {
+      width: 20px;
+      height: 20px;
+      fill: currentColor;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      padding: 3rem 0;
+      text-align: center;
+      border-top: 1px solid rgba(184, 134, 11, 0.12);
+    }
+
+    .footer-text {
+      font-size: 0.82rem;
+      color: var(--ink-lighter);
+      letter-spacing: 0.1em;
+    }
+
+    /* ===== SCROLL REVEAL ===== */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s var(--ease-out), transform 0.8s var(--ease-out);
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ===== LANGUAGE VISIBILITY ===== */
+    [data-lang="ar"] { display: none; }
+    html[dir="rtl"] [data-lang="en"] { display: none; }
+    html[dir="rtl"] [data-lang="ar"] { display: block; }
+    html[dir="rtl"] span[data-lang="ar"] { display: inline; }
+    html[dir="rtl"] span[data-lang="en"] { display: none; }
+  </style>
+</head>
+<body>
+
+  <!-- Language Toggle -->
+  <div class="lang-toggle">
+    <button class="lang-btn active" onclick="setLang('en')">EN</button>
+    <button class="lang-btn" onclick="setLang('ar')">عربي</button>
+  </div>
+
+  <!-- Navigation -->
+  <nav id="navbar">
+    <a href="#" class="nav-logo">
+      <span data-lang="en">Afrah Al Sabah</span>
+      <span data-lang="ar">أفراح الصباح</span>
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about" onclick="closeMenu()"><span data-lang="en">About</span><span data-lang="ar">عنّي</span></a></li>
+      <li><a href="#books" onclick="closeMenu()"><span data-lang="en">Books</span><span data-lang="ar">الكتب</span></a></li>
+      <li><a href="#blog" onclick="closeMenu()"><span data-lang="en">Blog</span><span data-lang="ar">المدوّنة</span></a></li>
+      <li><a href="#contact" onclick="closeMenu()"><span data-lang="en">Contact</span><span data-lang="ar">تواصل</span></a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-flourish"></div>
+    <h1 class="hero-name">
+      <span data-lang="en">Afrah Mubarak<br>Al Sabah</span>
+      <span data-lang="ar">أفراح مبارك<br>الصباح</span>
+    </h1>
+    <p class="hero-subtitle">
+      <span data-lang="en">Poet · Intellectual · Observer · Nature Lover</span>
+      <span data-lang="ar">شاعرة · مثقفة · مراقبة · عاشقة للطبيعة</span>
+    </p>
+    <p class="hero-quote">
+      <span data-lang="en">"A favourite line of poetry will go here..."</span>
+      <span data-lang="ar">"سطر شعري مفضّل سيُضاف هنا..."</span>
+    </p>
+    <div class="hero-scroll">
+      <a href="#about">
+        <span data-lang="en">Discover</span>
+        <span data-lang="ar">اكتشف</span>
+        <div class="scroll-line"></div>
+      </a>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-photo reveal">
+          <p class="photo-placeholder">
+            <span data-lang="en">Photo coming soon</span>
+            <span data-lang="ar">الصورة قريباً</span>
+          </p>
+        </div>
+        <div class="about-content reveal">
+          <p class="section-label">
+            <span data-lang="en">About</span>
+            <span data-lang="ar">عنّي</span>
+          </p>
+          <h2 class="section-title">
+            <span data-lang="en">A Voice Between<br>Two Worlds</span>
+            <span data-lang="ar">صوت بين<br>عالمَين</span>
+          </h2>
+          <div class="gold-rule"></div>
+          <div data-lang="en">
+            <p class="about-text">Afrah Mubarak Al Sabah is a poet, intellectual, and keen observer of the world around her. With a deep love for nature and the written word, she weaves observations into verse that resonates across cultures and languages.</p>
+            <p class="about-text">She has published three collections of poetry. Her latest book, <em>Blue Passion</em>, has been translated into English, bridging the beauty of Arabic poetry with a global audience.</p>
+          </div>
+          <div data-lang="ar">
+            <p class="about-text">أفراح مبارك الصباح شاعرة ومثقفة ومراقبة دقيقة للعالم من حولها. بشغفها العميق بالطبيعة والكلمة المكتوبة، تنسج ملاحظاتها في أبيات شعرية تتردد أصداؤها عبر الثقافات واللغات.</p>
+            <p class="about-text">أصدرت ثلاث مجموعات شعرية. أحدث كتبها، <em>شغف أزرق</em>، تُرجم إلى الإنجليزية، ليكون جسراً يربط جمال الشعر العربي بالقارئ العالمي.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Books -->
+  <section class="books" id="books">
+    <div class="container">
+      <div class="reveal">
+        <p class="section-label">
+          <span data-lang="en">Published Works</span>
+          <span data-lang="ar">الإصدارات</span>
+        </p>
+        <h2 class="section-title">
+          <span data-lang="en">Books</span>
+          <span data-lang="ar">الكتب</span>
+        </h2>
+        <div class="gold-rule"></div>
+      </div>
+      <div class="books-grid">
+        <div class="book-card reveal">
+          <div class="book-cover">
+            <p class="book-cover-placeholder">
+              <span data-lang="en">Cover image<br>coming soon</span>
+              <span data-lang="ar">صورة الغلاف<br>قريباً</span>
+            </p>
+          </div>
+          <h3 class="book-title">
+            <span data-lang="en">Blue Passion</span>
+            <span data-lang="ar">شغف أزرق</span>
+          </h3>
+          <p class="book-desc">
+            <span data-lang="en">Her latest collection, translated into English.</span>
+            <span data-lang="ar">أحدث مجموعاتها الشعرية، مترجمة إلى الإنجليزية.</span>
+          </p>
+        </div>
+        <div class="book-card reveal">
+          <div class="book-cover">
+            <p class="book-cover-placeholder">
+              <span data-lang="en">Cover image<br>coming soon</span>
+              <span data-lang="ar">صورة الغلاف<br>قريباً</span>
+            </p>
+          </div>
+          <h3 class="book-title">
+            <span data-lang="en">Title Coming Soon</span>
+            <span data-lang="ar">العنوان قريباً</span>
+          </h3>
+          <p class="book-desc">
+            <span data-lang="en">Details to be added.</span>
+            <span data-lang="ar">التفاصيل ستُضاف لاحقاً.</span>
+          </p>
+        </div>
+        <div class="book-card reveal">
+          <div class="book-cover">
+            <p class="book-cover-placeholder">
+              <span data-lang="en">Cover image<br>coming soon</span>
+              <span data-lang="ar">صورة الغلاف<br>قريباً</span>
+            </p>
+          </div>
+          <h3 class="book-title">
+            <span data-lang="en">Title Coming Soon</span>
+            <span data-lang="ar">العنوان قريباً</span>
+          </h3>
+          <p class="book-desc">
+            <span data-lang="en">Details to be added.</span>
+            <span data-lang="ar">التفاصيل ستُضاف لاحقاً.</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Blog -->
+  <section class="blog" id="blog">
+    <div class="container">
+      <div class="reveal">
+        <p class="section-label">
+          <span data-lang="en">Journal</span>
+          <span data-lang="ar">المدوّنة</span>
+        </p>
+        <h2 class="section-title">
+          <span data-lang="en">Blog</span>
+          <span data-lang="ar">المدوّنة</span>
+        </h2>
+        <div class="gold-rule"></div>
+      </div>
+      <div class="blog-grid">
+        <p class="blog-placeholder reveal">
+          <span data-lang="en">Blog posts coming soon. Stay tuned for thoughts on poetry, nature, and life.</span>
+          <span data-lang="ar">التدوينات قريباً. ترقّبوا أفكاراً عن الشعر والطبيعة والحياة.</span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="reveal">
+        <p class="section-label">
+          <span data-lang="en">Get in Touch</span>
+          <span data-lang="ar">تواصل</span>
+        </p>
+        <h2 class="section-title">
+          <span data-lang="en">Contact</span>
+          <span data-lang="ar">تواصل معي</span>
+        </h2>
+        <div class="gold-rule" style="margin-left:auto;margin-right:auto;"></div>
+        <p class="contact-text">
+          <span data-lang="en">For inquiries, collaborations, or simply to connect — reach out below.</span>
+          <span data-lang="ar">للاستفسارات أو التعاون أو مجرد التواصل — تواصلوا عبر الوسائل أدناه.</span>
+        </p>
+        <a href="mailto:amsoct@gmail.com" class="contact-email">amsoct@gmail.com</a>
+        <div class="social-links">
+          <a href="https://www.instagram.com/afrahmalsabah" target="_blank" rel="noopener" class="social-link">
+            <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            <span>@afrahmalsabah</span>
+          </a>
+          <a href="https://x.com/afrahMAlSabah" target="_blank" rel="noopener" class="social-link">
+            <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            <span>@afrahMAlSabah</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p class="footer-text">
+        <span data-lang="en">&copy; 2025 Afrah Mubarak Al Sabah. All rights reserved.</span>
+        <span data-lang="ar">&copy; ٢٠٢٥ أفراح مبارك الصباح. جميع الحقوق محفوظة.</span>
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    // Language Toggle
+    function setLang(lang) {
+      const html = document.documentElement;
+      const btns = document.querySelectorAll('.lang-btn');
+      if (lang === 'ar') {
+        html.setAttribute('lang', 'ar');
+        html.setAttribute('dir', 'rtl');
+        btns[0].classList.remove('active');
+        btns[1].classList.add('active');
+      } else {
+        html.setAttribute('lang', 'en');
+        html.setAttribute('dir', 'ltr');
+        btns[0].classList.add('active');
+        btns[1].classList.remove('active');
+      }
+    }
+
+    // Scrolled nav
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 60);
+    });
+
+    // Mobile menu
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+    menuToggle.addEventListener('click', () => {
+      menuToggle.classList.toggle('open');
+      navLinks.classList.toggle('open');
+    });
+    function closeMenu() {
+      menuToggle.classList.remove('open');
+      navLinks.classList.remove('open');
+    }
+
+    // Scroll reveal
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.15 });
+    reveals.forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
