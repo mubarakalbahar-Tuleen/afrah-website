@@ -467,6 +467,13 @@
       overflow: hidden;
     }
 
+    .book-cover img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 3px;
+    }
+
     .book-cover::before {
       content: '';
       position: absolute;
@@ -726,10 +733,7 @@
       <div class="books-grid">
         <div class="book-card reveal">
           <div class="book-cover">
-            <p class="book-cover-placeholder">
-              <span data-lang="en">Cover image<br>coming soon</span>
-              <span data-lang="ar">صورة الغلاف<br>قريباً</span>
-            </p>
+            <img src="blue-passion.jpeg" alt="شغف أزرق - Blue Passion">
           </div>
           <h3 class="book-title">
             <span data-lang="en">Blue Passion</span>
@@ -742,10 +746,7 @@
         </div>
         <div class="book-card reveal">
           <div class="book-cover">
-            <p class="book-cover-placeholder">
-              <span data-lang="en">Cover image<br>coming soon</span>
-              <span data-lang="ar">صورة الغلاف<br>قريباً</span>
-            </p>
+            <img src="sundooq.jpeg" alt="صندوق">
           </div>
           <h3 class="book-title">
             <span data-lang="en">صندوق</span>
@@ -758,10 +759,7 @@
         </div>
         <div class="book-card reveal">
           <div class="book-cover">
-            <p class="book-cover-placeholder">
-              <span data-lang="en">Cover image<br>coming soon</span>
-              <span data-lang="ar">صورة الغلاف<br>قريباً</span>
-            </p>
+            <img src="aweel.jpg" alt="عويل الصمت لا يسمع">
           </div>
           <h3 class="book-title">
             <span data-lang="en">عويل الصمت لا يسمع</span>
