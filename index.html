@@ -3,34 +3,29 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>أفراح مبارك الصباح — شاعرة | Afrah Mubarak Al Sabah — Poet</title>
+<title>أفراح مبارك الصباح — شاعرة | Afrah Mubarak Al Sabah</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Noto+Naskh+Arabic:wght@400;500;600;700&family=DM+Serif+Display:ital@0;1&family=Nunito+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Noto+Naskh+Arabic:wght@400;500;600;700&family=Aref+Ruqaa:wght@400;700&family=Reem+Kufi:wght@400;500;600;700&family=Nunito+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 
 :root {
+  --sand-white: #f7f3ec;
+  --sand-light: #f0ebe0;
+  --sand: #e2d9c8;
+  --sand-deep: #c8bca8;
+  --sand-dark: #a89880;
+  --warm-brown: #6a5a48;
+  --deep-brown: #3a3028;
+  --ink: #1a1814;
+  --ink-warm: #2e2820;
+  --terracotta: #b8845a;
+  --terracotta-deep: #9a6a42;
+  --sky-deep: #4a7a98;
   --cream: #faf6ef;
-  --warm-white: #f5f0e6;
-  --sand: #ede4d4;
-  --sand-deep: #d8ccb8;
-  --terracotta: #c2956a;
-  --terracotta-soft: #d4ac82;
-  --sky-pale: #d0e0ec;
-  --sky: #7bacc8;
-  --sky-deep: #4a8ab0;
-  --teal: #5a9a9a;
-  --teal-soft: #88bab4;
-  --sage: #7a9468;
-  --sage-soft: #a8c098;
-  --dusty-rose: #b8868a;
-  --dusty-rose-soft: #d4a8ac;
-  --ink: #1e1c18;
-  --ink-warm: #3a342a;
-  --ink-soft: #5a5248;
-  --ink-faint: #8a8070;
-  --ink-ghost: #b0a694;
 
+  --ff-display-ar: 'Reem Kufi', sans-serif;
+  --ff-calligraphy: 'Aref Ruqaa', serif;
   --ff-arabic: 'Amiri', serif;
   --ff-arabic-body: 'Noto Naskh Arabic', serif;
   --ff-display: 'DM Serif Display', serif;
@@ -41,112 +36,14 @@ html { scroll-behavior: smooth; }
 
 body {
   font-family: var(--ff-arabic-body);
-  background: var(--cream);
+  background: var(--sand-white);
   color: var(--ink);
   line-height: 1.8;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
-  position: relative;
-}
-
-/* Full-page Arabic calligraphy background */
-body::before {
-  content: 'بسم الله   ·   الشعر نور القلب   ·   من القلب إلى القلب   ·   كلمات تسافر عبر الزمن   ·   الحبر يروي ما عجز عنه اللسان   ·   في البدء كانت الكلمة   ·   قصائد من وحي الروح   ·   شعر   ·   أدب   ·   كتب   ·   حروف   ·   قلم   ·   ديوان   ·   بيت شعر   ·   نثر   ·   كلمات   ·   إبداع   ·   خيال   ·   وجدان   ·   بسم الله   ·   الشعر نور القلب   ·   من القلب إلى القلب   ·   كلمات تسافر عبر الزمن   ·   الحبر يروي ما عجز عنه اللسان   ·   في البدء كانت الكلمة   ·   قصائد من وحي الروح   ·   شعر   ·   أدب   ·   كتب   ·   حروف   ·   قلم   ·   ديوان   ·   بيت شعر   ·   نثر   ·   كلمات   ·   إبداع   ·   خيال   ·   وجدان';
-  position: fixed;
-  inset: 0;
-  font-family: var(--ff-arabic);
-  font-size: 2.8rem;
-  line-height: 3.5;
-  color: var(--terracotta);
-  opacity: 0.08;
-  pointer-events: none;
-  z-index: 0;
-  word-spacing: 0.5em;
-  letter-spacing: 0.05em;
-  overflow: hidden;
-  padding: 2rem;
-  direction: rtl;
-}
-
-body::after {
-  content: '';
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 0;
-  background:
-    radial-gradient(ellipse at 20% 30%, rgba(194,149,106,0.04) 0%, transparent 50%),
-    radial-gradient(ellipse at 80% 70%, rgba(90,154,154,0.03) 0%, transparent 50%),
-    radial-gradient(ellipse at 50% 50%, rgba(123,172,200,0.02) 0%, transparent 60%);
 }
 
 a { text-decoration: none; color: inherit; }
-
-/* ========================
-   ARABESQUE TEXTURE
-======================== */
-.geo-texture {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  opacity: 0.035;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cg fill='none' stroke='%233a342a' stroke-width='0.6'%3E%3Ccircle cx='60' cy='60' r='40'/%3E%3Ccircle cx='60' cy='60' r='28'/%3E%3Ccircle cx='60' cy='60' r='16'/%3E%3Cpath d='M60 20 Q80 40 60 60 Q40 40 60 20Z'/%3E%3Cpath d='M60 60 Q80 80 60 100 Q40 80 60 60Z'/%3E%3Cpath d='M20 60 Q40 40 60 60 Q40 80 20 60Z'/%3E%3Cpath d='M60 60 Q80 40 100 60 Q80 80 60 60Z'/%3E%3Cpath d='M60 20 L100 60 L60 100 L20 60Z'/%3E%3C/g%3E%3C/svg%3E");
-  background-size: 120px 120px;
-}
-
-/* ========================
-   DECORATIVE ELEMENTS
-======================== */
-.arabesque-divider {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-  margin: 0 auto;
-  padding: 1.5rem 0;
-  max-width: 300px;
-  opacity: 0.5;
-}
-
-.arabesque-divider::before,
-.arabesque-divider::after {
-  content: '';
-  flex: 1;
-  height: 1px;
-  background: linear-gradient(to var(--dir, left), var(--terracotta-soft), transparent);
-}
-
-.arabesque-divider::after { --dir: right; }
-
-.arabesque-divider svg {
-  width: 30px;
-  height: 30px;
-  flex-shrink: 0;
-}
-
-.book-ornament {
-  position: absolute;
-  pointer-events: none;
-  opacity: 0.06;
-  z-index: 0;
-}
-
-.book-ornament svg {
-  width: 100%;
-  height: 100%;
-}
-
-.calligraphy-accent {
-  font-family: var(--ff-arabic);
-  position: absolute;
-  pointer-events: none;
-  opacity: 0.07;
-  font-size: 8rem;
-  line-height: 1;
-  color: var(--terracotta);
-  z-index: 0;
-  white-space: nowrap;
-}
 
 /* ========================
    NAVIGATION
@@ -162,58 +59,38 @@ nav {
   align-items: center;
   justify-content: space-between;
   background: transparent;
-  transition: all 0.5s ease;
+  transition: all 0.5s;
 }
 
 nav.scrolled {
-  background: rgba(250,246,239,0.92);
-  backdrop-filter: blur(16px);
-  box-shadow: 0 1px 0 rgba(0,0,0,0.05);
+  background: rgba(247,243,236,0.94);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 1px 0 rgba(0,0,0,0.04);
 }
 
 .nav-brand {
-  display: flex;
-  align-items: baseline;
-  gap: 0.6rem;
-}
-
-.nav-brand .ar {
-  font-family: var(--ff-arabic);
-  font-size: 1.05rem;
+  font-family: var(--ff-display-ar);
+  font-size: 1.1rem;
   font-weight: 700;
   color: var(--ink);
 }
 
-nav.hero-dark .nav-brand .ar,
-nav.hero-dark .nav-links a,
-nav.hero-dark .nav-hamburger span { color: var(--cream); }
-
-nav.scrolled .nav-brand .ar { color: var(--ink) !important; }
-nav.scrolled .nav-links a { color: var(--ink-faint) !important; }
-nav.scrolled .nav-hamburger span { background: var(--ink-soft) !important; }
-
-.nav-brand .en {
-  font-family: var(--ff-body);
-  font-size: 0.68rem;
-  font-weight: 400;
-  letter-spacing: 0.1em;
-  color: var(--ink-faint);
-  direction: ltr;
-}
-
-nav.hero-dark .nav-brand .en { color: rgba(250,246,239,0.5); }
-nav.scrolled .nav-brand .en { color: var(--ink-faint) !important; }
+nav.on-hero .nav-brand { color: var(--cream); }
+nav.scrolled .nav-brand { color: var(--ink) !important; }
 
 .nav-links { display: flex; gap: 2.2rem; list-style: none; }
 
 .nav-links a {
   font-family: var(--ff-arabic-body);
   font-size: 0.85rem;
-  color: var(--ink-faint);
+  color: var(--warm-brown);
   transition: color 0.3s;
 }
 
+nav.on-hero .nav-links a { color: rgba(250,246,239,0.55); }
+nav.scrolled .nav-links a { color: var(--warm-brown) !important; }
 .nav-links a:hover { color: var(--ink); }
+nav.on-hero .nav-links a:hover { color: var(--cream) !important; }
 
 .nav-hamburger {
   display: none;
@@ -222,208 +99,220 @@ nav.scrolled .nav-brand .en { color: var(--ink-faint) !important; }
   cursor: pointer;
   padding: 6px;
   flex-direction: column;
-  gap: 4px;
+  gap: 5px;
 }
 
 .nav-hamburger span {
   display: block;
-  width: 20px;
+  width: 22px;
   height: 1.5px;
-  background: var(--ink-soft);
-  transition: all 0.3s;
+  background: var(--warm-brown);
+  transition: 0.3s;
 }
 
+nav.on-hero .nav-hamburger span { background: var(--cream); }
+nav.scrolled .nav-hamburger span { background: var(--warm-brown) !important; }
+
 /* ========================
-   HERO — WARM, DRAMATIC
+   HERO — MASSIVE ARABIC TYPE
 ======================== */
 .hero {
   min-height: 100vh;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
   position: relative;
   overflow: hidden;
-  background: linear-gradient(135deg,
-    #2a2218 0%,
-    #3a2e22 25%,
-    #4a3a2a 50%,
-    #3a3028 75%,
-    #2a2420 100%
+  background: var(--ink-warm);
+  display: flex;
+  align-items: center;
+}
+
+/* Warm atmospheric gradient */
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(160deg,
+    #2e2820 0%,
+    #3a3028 30%,
+    #4a3a2c 55%,
+    #3a2e24 80%,
+    #2a2218 100%
   );
 }
 
-/* Warm atmospheric glow */
+/* Decorative Arabic letters as texture (like the fabric reference) */
+.hero-calligraphy-bg {
+  position: absolute;
+  inset: 0;
+  font-family: var(--ff-calligraphy);
+  font-size: 8rem;
+  line-height: 1.1;
+  color: rgba(184,132,90,0.04);
+  word-spacing: 2rem;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 1;
+  direction: rtl;
+  padding: 2rem;
+  user-select: none;
+}
+
+/* Warm glow */
 .hero::before {
   content: '';
   position: absolute;
-  width: 800px;
-  height: 800px;
-  top: -200px;
-  right: 30%;
+  width: 900px;
+  height: 900px;
+  top: -300px;
+  right: 20%;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(194,149,106,0.15) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(184,132,90,0.1) 0%, transparent 65%);
+  z-index: 2;
   pointer-events: none;
-  z-index: 1;
-  animation: breathe 8s ease-in-out infinite;
+  animation: glow 10s ease-in-out infinite;
 }
 
-@keyframes breathe {
+@keyframes glow {
   0%,100% { transform: scale(1); opacity: 1; }
-  50% { transform: scale(1.1); opacity: 0.7; }
+  50% { transform: scale(1.08); opacity: 0.6; }
 }
 
-/* Second glow — blue */
-.hero::after {
-  content: '';
+/* Islamic geometric mandala — subtle center decoration */
+.hero-mandala {
   position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   width: 500px;
   height: 500px;
-  bottom: -100px;
-  left: 10%;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(74,138,176,0.08) 0%, transparent 70%);
+  z-index: 2;
+  opacity: 0.03;
   pointer-events: none;
-  z-index: 1;
 }
 
 .hero-content {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: clamp(6rem, 8vw, 8rem) clamp(2rem, 5vw, 5rem);
   position: relative;
-  z-index: 5;
+  z-index: 10;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  align-items: center;
+  gap: 2rem;
+  padding: clamp(6rem, 8vw, 8rem) clamp(2rem, 5vw, 5rem);
 }
 
-.hero-tag {
-  font-family: var(--ff-arabic-body);
-  font-size: 0.78rem;
-  color: var(--terracotta-soft);
-  margin-bottom: 1.8rem;
-  opacity: 0;
-  animation: softUp 0.8s 0.2s ease forwards;
-}
+.hero-text { position: relative; }
 
-@keyframes softUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
+/* Giant Arabic name — the centerpiece like Qomra style */
 .hero-name-ar {
-  font-family: var(--ff-arabic);
-  font-size: clamp(3rem, 6vw, 5rem);
+  font-family: var(--ff-display-ar);
+  font-size: clamp(4rem, 9vw, 8rem);
   font-weight: 700;
-  line-height: 1.15;
+  line-height: 1.05;
   color: var(--cream);
-  margin-bottom: 0.6rem;
+  margin-bottom: 0.8rem;
   opacity: 0;
-  animation: softUp 0.9s 0.35s ease forwards;
+  animation: revealName 1s 0.3s ease forwards;
+}
+
+@keyframes revealName {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .hero-name-en {
   font-family: var(--ff-display);
-  font-size: clamp(1.2rem, 2vw, 1.6rem);
+  font-size: clamp(0.9rem, 1.5vw, 1.2rem);
   font-weight: 400;
-  color: rgba(250,246,239,0.4);
-  direction: ltr;
-  text-align: left;
-  margin-bottom: 2.2rem;
-  opacity: 0;
-  animation: softUp 0.9s 0.5s ease forwards;
-}
-
-.hero-desc-ar {
-  font-family: var(--ff-arabic-body);
-  font-size: 0.95rem;
-  color: rgba(250,246,239,0.65);
-  margin-bottom: 0.4rem;
-  opacity: 0;
-  animation: softUp 0.8s 0.65s ease forwards;
-}
-
-.hero-desc-en {
-  font-family: var(--ff-body);
-  font-size: 0.8rem;
-  font-weight: 300;
   color: rgba(250,246,239,0.3);
   direction: ltr;
   text-align: left;
+  letter-spacing: 0.05em;
   margin-bottom: 2.5rem;
   opacity: 0;
-  animation: softUp 0.8s 0.75s ease forwards;
+  animation: revealName 0.8s 0.55s ease forwards;
+}
+
+.hero-tagline {
+  font-family: var(--ff-calligraphy);
+  font-size: clamp(1.1rem, 2vw, 1.5rem);
+  color: var(--terracotta);
+  line-height: 1.6;
+  margin-bottom: 0.6rem;
+  opacity: 0;
+  animation: revealName 0.8s 0.7s ease forwards;
+}
+
+.hero-tagline-en {
+  font-family: var(--ff-body);
+  font-size: 0.78rem;
+  font-weight: 300;
+  color: rgba(250,246,239,0.25);
+  direction: ltr;
+  text-align: left;
+  letter-spacing: 0.03em;
+  margin-bottom: 3rem;
+  opacity: 0;
+  animation: revealName 0.8s 0.85s ease forwards;
 }
 
 .hero-quote {
-  padding-right: 1.2rem;
+  padding-right: 1.5rem;
   border-right: 2px solid var(--terracotta);
-  max-width: 380px;
+  max-width: 400px;
   opacity: 0;
-  animation: softUp 0.8s 0.9s ease forwards;
+  animation: revealName 0.8s 1s ease forwards;
 }
 
 .hero-quote p {
   font-family: var(--ff-arabic);
   font-size: 1.15rem;
-  color: rgba(250,246,239,0.55);
-  line-height: 1.8;
+  color: rgba(250,246,239,0.5);
+  line-height: 1.9;
 }
 
 .hero-quote .en {
   font-family: var(--ff-display);
   font-style: italic;
-  font-size: 0.9rem;
-  color: rgba(250,246,239,0.25);
+  font-size: 0.85rem;
+  color: rgba(250,246,239,0.2);
   direction: ltr;
   text-align: left;
   margin-top: 0.5rem;
 }
 
-.hero-image {
+/* Portrait */
+.hero-portrait {
   position: relative;
-  overflow: hidden;
-  z-index: 2;
-}
-
-.hero-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center top;
-  display: block;
+  z-index: 10;
   opacity: 0;
-  animation: imgReveal 1.4s 0.3s ease forwards;
-  filter: brightness(0.92) contrast(1.05);
+  animation: portraitReveal 1.2s 0.4s ease forwards;
 }
 
-@keyframes imgReveal {
-  from { opacity: 0; transform: scale(1.03); }
+@keyframes portraitReveal {
+  from { opacity: 0; transform: scale(0.97); }
   to { opacity: 1; transform: scale(1); }
 }
 
-.hero-image::after {
+.hero-portrait img {
+  width: 100%;
+  max-width: 380px;
+  display: block;
+  border-radius: 2px;
+  filter: brightness(0.9) contrast(1.05) sepia(0.08);
+  box-shadow: 0 30px 60px rgba(0,0,0,0.3);
+  margin: 0 auto;
+}
+
+/* Decorative frame around portrait */
+.hero-portrait::before {
   content: '';
   position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg,
-    rgba(42,34,24,0.3) 0%,
-    transparent 25%,
-    transparent 70%,
-    rgba(42,34,24,0.5) 100%
-  );
+  inset: -12px;
+  border: 1px solid rgba(184,132,90,0.15);
+  border-radius: 2px;
   pointer-events: none;
 }
 
-.hero-image::before {
-  content: '';
-  position: absolute;
-  top: 0; bottom: 0;
-  right: 0;
-  width: 120px;
-  background: linear-gradient(to left, rgba(42,34,24,0.6), transparent);
-  z-index: 1;
-  pointer-events: none;
-}
-
-/* Hero scroll hint */
+/* Scroll hint */
 .hero-scroll {
   position: absolute;
   bottom: 30px;
@@ -435,111 +324,111 @@ nav.scrolled .nav-brand .en { color: var(--ink-faint) !important; }
   align-items: center;
   gap: 0.5rem;
   opacity: 0;
-  animation: softUp 0.8s 1.3s ease forwards;
+  animation: revealName 0.8s 1.4s ease forwards;
 }
 
 .hero-scroll span {
-  font-family: var(--ff-body);
-  font-size: 0.6rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: rgba(250,246,239,0.25);
+  font-family: var(--ff-arabic-body);
+  font-size: 0.65rem;
+  color: rgba(250,246,239,0.2);
 }
 
-.scroll-dot {
+.scroll-line {
   width: 1px;
   height: 30px;
-  background: linear-gradient(to bottom, var(--terracotta-soft), transparent);
-  animation: pulse 2s ease-in-out infinite;
+  background: linear-gradient(to bottom, var(--terracotta), transparent);
+  animation: pulse 2.5s ease-in-out infinite;
 }
 
 @keyframes pulse {
-  0%,100% { opacity: 0.4; }
-  50% { opacity: 0.8; }
+  0%,100% { opacity: 0.3; }
+  50% { opacity: 0.7; }
 }
 
 /* ========================
-   SECTION BASE
+   SECTIONS
 ======================== */
 section {
   padding: clamp(5rem, 9vw, 8rem) clamp(1.5rem, 5vw, 5rem);
   position: relative;
-  z-index: 1;
 }
 
 .section-center {
-  max-width: 1000px;
+  max-width: 1050px;
   margin: 0 auto;
 }
 
-.section-label {
-  font-family: var(--ff-arabic-body);
-  font-size: 0.75rem;
+.section-label-ar {
+  font-family: var(--ff-display-ar);
+  font-size: 0.8rem;
+  font-weight: 600;
   color: var(--terracotta);
   margin-bottom: 0.6rem;
 }
 
-.section-label .en {
-  font-family: var(--ff-body);
-  font-size: 0.62rem;
-  font-weight: 500;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--ink-ghost);
-  direction: ltr;
-  margin-right: 0.5rem;
-}
-
 .section-title-ar {
-  font-family: var(--ff-arabic);
-  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-family: var(--ff-display-ar);
+  font-size: clamp(2.2rem, 4.5vw, 3.2rem);
   font-weight: 700;
   color: var(--ink);
-  line-height: 1.3;
+  line-height: 1.2;
   margin-bottom: 0.3rem;
 }
 
 .section-title-en {
   font-family: var(--ff-display);
-  font-size: clamp(1rem, 1.8vw, 1.3rem);
+  font-size: clamp(0.95rem, 1.5vw, 1.2rem);
   font-weight: 400;
-  color: var(--ink-ghost);
+  color: var(--sand-dark);
   direction: ltr;
   text-align: left;
-  margin-bottom: 2.5rem;
+  margin-bottom: 3rem;
 }
 
 /* ========================
-   ABOUT — WARM BG
+   ABOUT
 ======================== */
 .about-section {
-  background: rgba(245, 240, 230, 0.4);
+  background: var(--sand-light);
   overflow: hidden;
-  position: relative;
-  z-index: 1;
+}
+
+/* Decorative calligraphy in background */
+.about-section::before {
+  content: 'شعر حب طبيعة أمل نور كلمات';
+  position: absolute;
+  top: 50%;
+  right: -5%;
+  transform: translateY(-50%) rotate(-90deg);
+  font-family: var(--ff-calligraphy);
+  font-size: 6rem;
+  color: rgba(0,0,0,0.018);
+  white-space: nowrap;
+  pointer-events: none;
+  letter-spacing: 0.3em;
 }
 
 .about-grid {
   display: grid;
   grid-template-columns: 1.1fr 1fr;
-  gap: clamp(2rem, 4vw, 4rem);
+  gap: clamp(2.5rem, 4vw, 4rem);
 }
 
 .about-ar p {
   font-family: var(--ff-arabic-body);
   font-size: 1.05rem;
-  color: var(--ink-soft);
+  color: var(--ink-warm);
   line-height: 2;
-  margin-bottom: 1.3rem;
+  margin-bottom: 1.4rem;
 }
 
 .about-highlight {
-  font-family: var(--ff-arabic);
-  font-size: 1.2rem;
-  color: var(--sky-deep);
-  padding-right: 1.2rem;
-  border-right: 3px solid var(--terracotta-soft);
-  margin: 1.8rem 0;
+  font-family: var(--ff-calligraphy);
+  font-size: 1.35rem;
+  color: var(--terracotta-deep);
+  padding-right: 1.5rem;
+  border-right: 3px solid var(--terracotta);
+  margin: 2rem 0;
   line-height: 1.7;
 }
 
@@ -552,65 +441,69 @@ section {
   font-family: var(--ff-body);
   font-size: 0.95rem;
   font-weight: 300;
-  color: var(--ink-faint);
+  color: var(--warm-brown);
   line-height: 1.85;
   margin-bottom: 1.2rem;
 }
 
-.about-en em { color: var(--terracotta); font-style: italic; }
+.about-en em { color: var(--terracotta); }
 
 /* ========================
-   BOOKS — WITH WARM CARDS
+   BOOKS
 ======================== */
-.books-section {
-  background: transparent;
-  position: relative;
-  z-index: 1;
-}
+.books-section { background: var(--cream); }
 
 .books-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: clamp(1.5rem, 3vw, 2rem);
+  gap: clamp(1.5rem, 3vw, 2.5rem);
 }
 
 .book-card {
-  background: var(--warm-white);
-  border-radius: 8px;
+  background: var(--sand-light);
+  border-radius: 6px;
   padding: 2rem 1.5rem 1.8rem;
   text-align: center;
   cursor: pointer;
   transition: transform 0.4s ease, box-shadow 0.4s ease;
   border: 1px solid rgba(0,0,0,0.03);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle geometric corner decoration */
+.book-card::before {
+  content: '';
+  position: absolute;
+  top: 0; right: 0;
+  width: 60px; height: 60px;
+  background: linear-gradient(225deg, rgba(184,132,90,0.08) 50%, transparent 50%);
+  pointer-events: none;
 }
 
 .book-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 20px 50px rgba(42,36,24,0.1);
+  box-shadow: 0 20px 50px rgba(42,36,24,0.12);
 }
 
-.book-cover {
-  margin-bottom: 1.5rem;
-  position: relative;
-}
+.book-cover { margin-bottom: 1.5rem; }
 
 .book-cover img {
-  width: 175px;
+  width: 170px;
   display: block;
   margin: 0 auto;
-  box-shadow: 0 8px 25px rgba(42,36,24,0.12),
-              0 3px 8px rgba(42,36,24,0.06);
+  box-shadow: 0 8px 28px rgba(42,36,24,0.14);
   border-radius: 2px;
-  transition: box-shadow 0.4s, transform 0.4s;
+  transition: all 0.4s;
 }
 
 .book-card:hover .book-cover img {
-  box-shadow: 0 14px 35px rgba(42,36,24,0.18);
+  box-shadow: 0 14px 38px rgba(42,36,24,0.2);
   transform: translateY(-3px);
 }
 
 .book-title-ar {
-  font-family: var(--ff-arabic);
+  font-family: var(--ff-display-ar);
   font-size: 1.2rem;
   font-weight: 700;
   color: var(--ink);
@@ -619,8 +512,8 @@ section {
 
 .book-title-en {
   font-family: var(--ff-display);
-  font-size: 0.9rem;
-  color: var(--ink-ghost);
+  font-size: 0.88rem;
+  color: var(--sand-dark);
   direction: ltr;
   margin-bottom: 0.6rem;
 }
@@ -629,7 +522,7 @@ section {
   font-family: var(--ff-body);
   font-size: 0.8rem;
   font-weight: 300;
-  color: var(--ink-faint);
+  color: var(--warm-brown);
   direction: ltr;
   text-align: center;
   line-height: 1.5;
@@ -639,28 +532,26 @@ section {
   display: inline-block;
   font-family: var(--ff-arabic-body);
   font-size: 0.62rem;
-  color: var(--terracotta);
-  background: rgba(194,149,106,0.12);
+  color: var(--terracotta-deep);
+  background: rgba(184,132,90,0.1);
   padding: 0.3rem 0.8rem;
   border-radius: 20px;
   margin-top: 0.6rem;
 }
 
 /* ========================
-   JOURNAL — TINTED
+   JOURNAL
 ======================== */
 .journal-section {
-  background: rgba(245, 240, 230, 0.3);
-  position: relative;
-  z-index: 1;
+  background: var(--sand-light);
 }
 
 .journal-empty {
   text-align: center;
   padding: 4rem 2rem;
-  max-width: 500px;
+  max-width: 520px;
   margin: 0 auto;
-  border-radius: 8px;
+  border-radius: 6px;
   background: var(--cream);
   border: 1px solid var(--sand);
   position: relative;
@@ -670,66 +561,65 @@ section {
 .journal-empty::before {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
+  top: 0; left: 0; right: 0;
   height: 3px;
-  background: linear-gradient(to left, var(--terracotta-soft), var(--sky), var(--sage-soft));
+  background: linear-gradient(to left, var(--terracotta), var(--sky-deep), var(--terracotta));
 }
 
 .journal-empty .icon {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background: rgba(194,149,106,0.1);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 1.5rem;
-  font-size: 1.2rem;
+  font-family: var(--ff-calligraphy);
+  font-size: 2.5rem;
   color: var(--terracotta);
+  opacity: 0.3;
+  margin-bottom: 1rem;
+  display: block;
 }
 
 .journal-empty p {
   font-family: var(--ff-arabic-body);
   font-size: 0.98rem;
-  color: var(--ink-faint);
-  line-height: 1.7;
+  color: var(--warm-brown);
 }
 
 .journal-empty .en {
   font-family: var(--ff-body);
   font-weight: 300;
   font-size: 0.85rem;
-  color: var(--ink-ghost);
+  color: var(--sand-dark);
   direction: ltr;
   margin-top: 0.4rem;
 }
 
 /* ========================
-   CONTACT — RICH SECTION
+   CONTACT — DARK, RICH
 ======================== */
 .contact-section {
-  background: linear-gradient(135deg,
-    #2a2218 0%,
-    #3a2e22 50%,
-    #2a2420 100%
-  );
+  background: var(--ink-warm);
   color: var(--cream);
   position: relative;
   overflow: hidden;
 }
 
-.contact-section .geo-texture { opacity: 0.025; }
+/* Calligraphy texture in contact bg */
+.contact-section::before {
+  content: 'تواصل كلمة شعر نور حب';
+  position: absolute;
+  bottom: -2rem;
+  left: 5%;
+  font-family: var(--ff-calligraphy);
+  font-size: 10rem;
+  color: rgba(184,132,90,0.03);
+  white-space: nowrap;
+  pointer-events: none;
+}
 
-.contact-section .section-label { color: var(--terracotta-soft); }
-.contact-section .section-label .en { color: rgba(250,246,239,0.3); }
+.contact-section .section-label-ar { color: var(--terracotta); }
 .contact-section .section-title-ar { color: var(--cream); }
-.contact-section .section-title-en { color: rgba(250,246,239,0.35); }
+.contact-section .section-title-en { color: rgba(250,246,239,0.3); }
 
 .contact-inner {
   text-align: center;
-  max-width: 550px;
+  max-width: 580px;
   margin: 0 auto;
   position: relative;
   z-index: 2;
@@ -738,7 +628,7 @@ section {
 .contact-desc {
   font-family: var(--ff-arabic-body);
   font-size: 0.95rem;
-  color: rgba(250,246,239,0.6);
+  color: rgba(250,246,239,0.55);
   margin-bottom: 0.3rem;
 }
 
@@ -746,7 +636,7 @@ section {
   font-family: var(--ff-body);
   font-size: 0.82rem;
   font-weight: 300;
-  color: rgba(250,246,239,0.3);
+  color: rgba(250,246,239,0.25);
   direction: ltr;
   margin-bottom: 2.5rem;
 }
@@ -765,36 +655,24 @@ section {
   font-family: var(--ff-body);
   font-size: 0.82rem;
   font-weight: 400;
-  color: rgba(250,246,239,0.6);
+  color: rgba(250,246,239,0.55);
   direction: ltr;
-  padding: 0.65rem 1.4rem;
-  border: 1px solid rgba(250,246,239,0.12);
+  padding: 0.7rem 1.5rem;
+  border: 1px solid rgba(250,246,239,0.1);
   border-radius: 40px;
-  transition: all 0.3s ease;
+  transition: all 0.3s;
 }
 
 .contact-link:hover {
-  border-color: var(--terracotta-soft);
-  background: rgba(194,149,106,0.1);
+  border-color: var(--terracotta);
+  background: rgba(184,132,90,0.1);
   color: var(--cream);
 }
 
 .contact-link svg {
-  width: 14px;
-  height: 14px;
+  width: 14px; height: 14px;
   flex-shrink: 0;
-  opacity: 0.5;
-}
-
-/* Contact glow */
-.contact-section::before {
-  content: '';
-  position: absolute;
-  width: 400px; height: 400px;
-  top: -100px; right: 10%;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(194,149,106,0.08) 0%, transparent 70%);
-  pointer-events: none;
+  opacity: 0.45;
 }
 
 /* ========================
@@ -802,21 +680,21 @@ section {
 ======================== */
 footer {
   text-align: center;
-  padding: 2.5rem clamp(1.5rem, 4vw, 4rem);
-  background: #1e1c18;
-  border-top: 1px solid rgba(250,246,239,0.05);
+  padding: 2rem clamp(1.5rem, 4vw, 4rem);
+  background: var(--ink);
+  border-top: 1px solid rgba(184,132,90,0.08);
 }
 
 footer p {
   font-family: var(--ff-arabic-body);
-  font-size: 0.75rem;
-  color: rgba(250,246,239,0.3);
+  font-size: 0.72rem;
+  color: rgba(250,246,239,0.25);
 }
 
 footer .en {
   font-family: var(--ff-body);
   font-weight: 300;
-  font-size: 0.68rem;
+  font-size: 0.65rem;
   direction: ltr;
   margin-top: 0.2rem;
 }
@@ -830,38 +708,26 @@ footer .en {
   transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
-.reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
+.reveal.visible { opacity: 1; transform: translateY(0); }
 .reveal-d1 { transition-delay: 0.12s; }
 .reveal-d2 { transition-delay: 0.24s; }
-.reveal-d3 { transition-delay: 0.36s; }
 
 /* ========================
    RESPONSIVE
 ======================== */
 @media (max-width: 768px) {
-  .hero {
-    grid-template-columns: 1fr;
-    min-height: auto;
-  }
-
-  .hero-image {
-    height: 55vh;
-    order: -1;
-  }
-
-  .hero-image::before { display: none; }
-
   .hero-content {
-    padding: 2.5rem 1.5rem 4rem;
+    grid-template-columns: 1fr;
     text-align: center;
   }
 
-  .hero-name-en,
-  .hero-desc-en { text-align: center; }
+  .hero-portrait { order: -1; }
+  .hero-portrait img { max-width: 260px; }
+  .hero-portrait::before { inset: -8px; }
+
+  .hero-name-ar { font-size: clamp(2.8rem, 10vw, 4rem); }
+  .hero-name-en { text-align: center; }
+  .hero-tagline-en { text-align: center; }
 
   .hero-quote {
     margin: 0 auto;
@@ -873,22 +739,22 @@ footer .en {
 
   .hero-quote .en { text-align: center; }
   .hero-scroll { display: none; }
+  .hero-calligraphy-bg { font-size: 4rem; }
 
   .about-grid { grid-template-columns: 1fr; }
   .about-en { text-align: center; }
-  .about-highlight { border-right: none; padding-right: 0; border-bottom: 3px solid var(--terracotta-soft); padding-bottom: 1rem; }
+  .about-highlight { border-right: none; padding-right: 0; border-bottom: 3px solid var(--terracotta); padding-bottom: 1rem; }
+  .about-section::before { display: none; }
 
   .books-grid { grid-template-columns: 1fr 1fr; }
 
   .nav-hamburger { display: flex; }
-
   .nav-links {
     position: fixed;
     top: 0; left: -100%;
-    width: 75%;
-    max-width: 280px;
+    width: 75%; max-width: 280px;
     height: 100vh;
-    background: var(--cream);
+    background: var(--sand-white);
     flex-direction: column;
     padding: 5rem 2rem;
     gap: 2rem;
@@ -896,19 +762,16 @@ footer .en {
     transition: left 0.35s ease;
     z-index: 999;
   }
-
   .nav-links.open { left: 0; }
-  .nav-links a { color: var(--ink-soft) !important; }
+  .nav-links a { color: var(--warm-brown) !important; }
 }
 
 @media (max-width: 480px) {
   .books-grid {
     grid-template-columns: 1fr;
     max-width: 260px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto;
   }
-
   .contact-links { flex-direction: column; align-items: center; }
   .contact-link { min-width: 250px; justify-content: center; }
 }
@@ -917,11 +780,8 @@ footer .en {
 <body>
 
 <!-- Navigation -->
-<nav id="mainNav" class="hero-dark">
-  <a href="#" class="nav-brand">
-    <span class="ar">أفراح الصباح</span>
-    <span class="en">Afrah Al Sabah</span>
-  </a>
+<nav id="mainNav" class="on-hero">
+  <a href="#" class="nav-brand">أفراح الصباح</a>
   <button class="nav-hamburger" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="القائمة">
     <span></span><span></span><span></span>
   </button>
@@ -935,60 +795,55 @@ footer .en {
 
 <!-- Hero -->
 <section class="hero">
-  <div class="calligraphy-accent" style="bottom: 10%; left: 5%; opacity: 0.03; font-size: 12rem; color: rgba(250,246,239,0.06);">شعر</div>
-  <div class="book-ornament" style="top: 15%; left: 8%; width: 150px; height: 150px;">
-    <svg viewBox="0 0 100 100" fill="none" stroke="rgba(250,246,239,0.08)" stroke-width="0.8">
-      <path d="M15 85 L15 15 Q50 5 50 15 L50 85 Q50 75 15 85Z"/>
-      <path d="M85 85 L85 15 Q50 5 50 15 L50 85 Q50 75 85 85Z"/>
-      <line x1="25" y1="30" x2="45" y2="28" /><line x1="25" y1="40" x2="45" y2="38" /><line x1="25" y1="50" x2="45" y2="48" /><line x1="25" y1="60" x2="45" y2="58" />
-      <line x1="55" y1="28" x2="75" y2="30" /><line x1="55" y1="38" x2="75" y2="40" /><line x1="55" y1="48" x2="75" y2="50" /><line x1="55" y1="58" x2="75" y2="60" />
-    </svg>
+  <div class="hero-bg"></div>
+
+  <!-- Decorative calligraphy letters as background texture -->
+  <div class="hero-calligraphy-bg" aria-hidden="true">
+    ش ع ر ك ل م ا ت ن و ر ح ب أ م ل ط ب ي ع ة ص م ت ب ح ر ق م ر ف ج ر ش ع ر ك ل م ا ت ن و ر ح ب أ م ل ط ب ي ع ة ص م ت ب ح ر ق م ر ف ج ر ش ع ر ك ل م ا ت ن و ر ح ب أ م ل ط ب ي ع ة ص م ت ب ح ر ق م ر ف ج ر
   </div>
+
+  <!-- Islamic geometric mandala -->
+  <svg class="hero-mandala" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+    <g fill="none" stroke="#c8bca8" stroke-width="0.3">
+      <circle cx="100" cy="100" r="95"/>
+      <circle cx="100" cy="100" r="75"/>
+      <circle cx="100" cy="100" r="55"/>
+      <circle cx="100" cy="100" r="35"/>
+      <circle cx="100" cy="100" r="15"/>
+      <path d="M100 5 L100 195 M5 100 L195 100"/>
+      <path d="M100 5 L195 100 L100 195 L5 100Z"/>
+      <path d="M33 33 L167 33 L167 167 L33 167Z" transform="rotate(45 100 100)"/>
+      <polygon points="100,5 117,60 176,60 128,90 145,145 100,112 55,145 72,90 24,60 83,60"/>
+      <polygon points="100,25 112,68 158,68 120,92 132,135 100,108 68,135 80,92 42,68 88,68"/>
+    </g>
+  </svg>
+
   <div class="hero-content">
-    <p class="hero-tag">شاعرة كويتية · مثقفة · مراقبة · عاشقة للطبيعة</p>
-    <h1 class="hero-name-ar">أفراح مبارك<br>الصباح</h1>
-    <p class="hero-name-en">Afrah Mubarak Al Sabah</p>
-    <p class="hero-desc-ar">شاعرة كويتية تنسج من الكلمات عوالم تتجاوز الحدود</p>
-    <p class="hero-desc-en">A Kuwaiti poet weaving worlds that transcend borders</p>
-    <div class="hero-quote">
-      <p>"سطر شعري مفضّل سيُضاف هنا..."</p>
-      <p class="en">"A favourite line of poetry will go here..."</p>
+    <div class="hero-text">
+      <h1 class="hero-name-ar">أفراح مبارك<br>الصباح</h1>
+      <p class="hero-name-en">Afrah Mubarak Al Sabah</p>
+      <p class="hero-tagline">شاعرة كويتية · مثقفة · مراقبة · عاشقة للطبيعة</p>
+      <p class="hero-tagline-en">Kuwaiti Poet · Intellectual · Observer · Nature Lover</p>
+      <div class="hero-quote">
+        <p>"سطر شعري مفضّل سيُضاف هنا..."</p>
+        <p class="en">"A favourite line of poetry will go here..."</p>
+      </div>
+    </div>
+    <div class="hero-portrait">
+      <img src="afrah-portrait.jpeg" alt="أفراح مبارك الصباح">
     </div>
   </div>
-  <div class="hero-image">
-    <img src="afrah-portrait.jpeg" alt="أفراح مبارك الصباح">
-  </div>
+
   <div class="hero-scroll">
     <span>اكتشف</span>
-    <div class="scroll-dot"></div>
+    <div class="scroll-line"></div>
   </div>
 </section>
 
-<!-- Arabesque Divider -->
-<div class="arabesque-divider">
-  <svg viewBox="0 0 50 50" fill="none" stroke="var(--terracotta-soft)" stroke-width="0.8">
-    <path d="M25 5 Q35 15 25 25 Q15 15 25 5Z"/>
-    <path d="M25 25 Q35 35 25 45 Q15 35 25 25Z"/>
-    <path d="M5 25 Q15 15 25 25 Q15 35 5 25Z"/>
-    <path d="M25 25 Q35 15 45 25 Q35 35 25 25Z"/>
-    <circle cx="25" cy="25" r="4"/>
-  </svg>
-</div>
-
 <!-- About -->
 <section class="about-section" id="about">
-  <div class="geo-texture"></div>
-  <div class="calligraphy-accent" style="top: -20px; right: -40px; font-size: 10rem;">قصيدة</div>
-  <div class="book-ornament" style="bottom: 30px; left: 20px; width: 120px; height: 120px;">
-    <svg viewBox="0 0 100 100" fill="none" stroke="var(--terracotta-soft)" stroke-width="0.7" opacity="0.12">
-      <path d="M20 80 L20 20 Q50 12 50 20 L50 80 Q50 72 20 80Z"/>
-      <path d="M80 80 L80 20 Q50 12 50 20 L50 80 Q50 72 80 80Z"/>
-      <path d="M10 82 L10 18 C10 16 12 14 14 14 L20 14" stroke-width="1"/>
-      <path d="M90 82 L90 18 C90 16 88 14 86 14 L80 14" stroke-width="1"/>
-    </svg>
-  </div>
   <div class="section-center">
-    <p class="section-label reveal"><span class="en">About</span> عنّي</p>
+    <p class="section-label-ar reveal">عنّي</p>
     <h2 class="section-title-ar reveal">صوت بين عالمَين</h2>
     <p class="section-title-en reveal">A Voice Between Two Worlds</p>
 
@@ -1006,41 +861,17 @@ footer .en {
   </div>
 </section>
 
-<!-- Arabesque Divider -->
-<div class="arabesque-divider">
-  <svg viewBox="0 0 50 50" fill="none" stroke="var(--terracotta-soft)" stroke-width="0.8">
-    <path d="M25 5 Q35 15 25 25 Q15 15 25 5Z"/>
-    <path d="M25 25 Q35 35 25 45 Q15 35 25 25Z"/>
-    <path d="M5 25 Q15 15 25 25 Q15 35 5 25Z"/>
-    <path d="M25 25 Q35 15 45 25 Q35 35 25 25Z"/>
-    <circle cx="25" cy="25" r="4"/>
-  </svg>
-</div>
-
 <!-- Books -->
 <section class="books-section" id="books">
-  <div class="calligraphy-accent" style="top: 10px; left: -30px; font-size: 9rem;">كتب</div>
-  <div class="book-ornament" style="top: 40px; right: 20px; width: 180px; height: 140px;">
-    <svg viewBox="0 0 180 140" fill="none" stroke="var(--terracotta-soft)" stroke-width="0.6" opacity="0.08">
-      <path d="M30 120 L30 20 Q90 8 90 20 L90 120 Q90 108 30 120Z"/>
-      <path d="M150 120 L150 20 Q90 8 90 20 L90 120 Q90 108 150 120Z"/>
-      <line x1="42" y1="40" x2="78" y2="36"/><line x1="42" y1="55" x2="78" y2="51"/><line x1="42" y1="70" x2="78" y2="66"/><line x1="42" y1="85" x2="78" y2="81"/>
-      <line x1="102" y1="36" x2="138" y2="40"/><line x1="102" y1="51" x2="138" y2="55"/><line x1="102" y1="66" x2="138" y2="70"/><line x1="102" y1="81" x2="138" y2="85"/>
-      <path d="M15 122 Q15 14 25 14 L30 14" stroke-width="1.2"/>
-      <path d="M165 122 Q165 14 155 14 L150 14" stroke-width="1.2"/>
-      <path d="M8 124 Q8 12 20 12 L25 12" stroke-width="0.8" opacity="0.5"/>
-      <path d="M172 124 Q172 12 160 12 L155 12" stroke-width="0.8" opacity="0.5"/>
-    </svg>
-  </div>
   <div class="section-center">
-    <p class="section-label reveal"><span class="en">Books</span> الإصدارات</p>
+    <p class="section-label-ar reveal">الإصدارات</p>
     <h2 class="section-title-ar reveal">الكتب</h2>
     <p class="section-title-en reveal">Published Works</p>
 
     <div class="books-grid">
       <div class="book-card reveal">
         <div class="book-cover">
-          <img src="blue-passion.jpeg" alt="شغف أزرق — Blue Passion">
+          <img src="blue-passion.jpeg" alt="شغف أزرق">
         </div>
         <p class="book-title-ar">شغف أزرق</p>
         <p class="book-title-en">Blue Passion</p>
@@ -1069,26 +900,15 @@ footer .en {
   </div>
 </section>
 
-<!-- Arabesque Divider -->
-<div class="arabesque-divider">
-  <svg viewBox="0 0 50 50" fill="none" stroke="var(--terracotta-soft)" stroke-width="0.8">
-    <path d="M25 5 Q35 15 25 25 Q15 15 25 5Z"/>
-    <path d="M25 25 Q35 35 25 45 Q15 35 25 25Z"/>
-    <path d="M5 25 Q15 15 25 25 Q15 35 5 25Z"/>
-    <path d="M25 25 Q35 15 45 25 Q35 35 25 25Z"/>
-    <circle cx="25" cy="25" r="4"/>
-  </svg>
-</div>
-
 <!-- Journal -->
 <section class="journal-section" id="journal">
   <div class="section-center">
-    <p class="section-label reveal"><span class="en">Journal</span> المدوّنة</p>
+    <p class="section-label-ar reveal">المدوّنة</p>
     <h2 class="section-title-ar reveal">تأمّلات</h2>
     <p class="section-title-en reveal">Reflections</p>
 
     <div class="journal-empty reveal">
-      <div class="icon">✎</div>
+      <span class="icon">قلم</span>
       <p>تأمّلات في الشعر والطبيعة والحياة — قريباً.</p>
       <p class="en">Thoughts on poetry, nature, and life — coming soon.</p>
     </div>
@@ -1097,11 +917,9 @@ footer .en {
 
 <!-- Contact -->
 <section class="contact-section" id="contact">
-  <div class="geo-texture"></div>
   <div class="section-center">
-    <div class="calligraphy-accent" style="bottom: 20px; left: 5%; font-size: 11rem; color: rgba(250,246,239,0.04);">أدب</div>
     <div class="contact-inner">
-      <p class="section-label reveal"><span class="en">Contact</span> تواصل</p>
+      <p class="section-label-ar reveal">تواصل</p>
       <h2 class="section-title-ar reveal">تواصل معي</h2>
       <p class="section-title-en reveal">Get in Touch</p>
       <p class="contact-desc reveal">للاستفسارات أو التعاون أو مجرد التواصل.</p>
@@ -1138,15 +956,15 @@ footer .en {
   }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
   document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 
-  // Nav: transparent on hero, solid on scroll
+  // Nav: on-hero vs scrolled
   const navEl = document.getElementById('mainNav');
-  const heroSection = document.querySelector('.hero');
-  
+  const heroEl = document.querySelector('.hero');
+
   window.addEventListener('scroll', () => {
-    const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
+    const heroBottom = heroEl.offsetTop + heroEl.offsetHeight;
     const past = window.scrollY > heroBottom - 80;
     navEl.classList.toggle('scrolled', past);
-    navEl.classList.toggle('hero-dark', !past);
+    navEl.classList.toggle('on-hero', !past);
   }, { passive: true });
 
   // Close mobile nav
