@@ -46,6 +46,38 @@ body {
   line-height: 1.8;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
+  position: relative;
+}
+
+/* Full-page Arabic calligraphy background */
+body::before {
+  content: 'بسم الله   ·   الشعر نور القلب   ·   من القلب إلى القلب   ·   كلمات تسافر عبر الزمن   ·   الحبر يروي ما عجز عنه اللسان   ·   في البدء كانت الكلمة   ·   قصائد من وحي الروح   ·   شعر   ·   أدب   ·   كتب   ·   حروف   ·   قلم   ·   ديوان   ·   بيت شعر   ·   نثر   ·   كلمات   ·   إبداع   ·   خيال   ·   وجدان   ·   بسم الله   ·   الشعر نور القلب   ·   من القلب إلى القلب   ·   كلمات تسافر عبر الزمن   ·   الحبر يروي ما عجز عنه اللسان   ·   في البدء كانت الكلمة   ·   قصائد من وحي الروح   ·   شعر   ·   أدب   ·   كتب   ·   حروف   ·   قلم   ·   ديوان   ·   بيت شعر   ·   نثر   ·   كلمات   ·   إبداع   ·   خيال   ·   وجدان';
+  position: fixed;
+  inset: 0;
+  font-family: var(--ff-arabic);
+  font-size: 2.8rem;
+  line-height: 3.5;
+  color: var(--terracotta);
+  opacity: 0.035;
+  pointer-events: none;
+  z-index: 0;
+  word-spacing: 0.5em;
+  letter-spacing: 0.05em;
+  overflow: hidden;
+  padding: 2rem;
+  direction: rtl;
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background:
+    radial-gradient(ellipse at 20% 30%, rgba(194,149,106,0.04) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 70%, rgba(90,154,154,0.03) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 50%, rgba(123,172,200,0.02) 0%, transparent 60%);
 }
 
 a { text-decoration: none; color: inherit; }
@@ -108,7 +140,7 @@ a { text-decoration: none; color: inherit; }
   font-family: var(--ff-arabic);
   position: absolute;
   pointer-events: none;
-  opacity: 0.04;
+  opacity: 0.07;
   font-size: 8rem;
   line-height: 1;
   color: var(--terracotta);
@@ -432,6 +464,7 @@ nav.scrolled .nav-brand .en { color: var(--ink-faint) !important; }
 section {
   padding: clamp(5rem, 9vw, 8rem) clamp(1.5rem, 5vw, 5rem);
   position: relative;
+  z-index: 1;
 }
 
 .section-center {
@@ -480,8 +513,10 @@ section {
    ABOUT — WARM BG
 ======================== */
 .about-section {
-  background: var(--warm-white);
+  background: rgba(245, 240, 230, 0.7);
   overflow: hidden;
+  position: relative;
+  z-index: 1;
 }
 
 .about-grid {
@@ -528,7 +563,9 @@ section {
    BOOKS — WITH WARM CARDS
 ======================== */
 .books-section {
-  background: var(--cream);
+  background: transparent;
+  position: relative;
+  z-index: 1;
 }
 
 .books-grid {
@@ -613,7 +650,9 @@ section {
    JOURNAL — TINTED
 ======================== */
 .journal-section {
-  background: linear-gradient(180deg, var(--warm-white), var(--cream));
+  background: rgba(245, 240, 230, 0.5);
+  position: relative;
+  z-index: 1;
 }
 
 .journal-empty {
