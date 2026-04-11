@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>لوحة التحكم — أفراح مبارك الصباح</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;500;600;700&family=Nunito+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+:root {
+  --sand-white: #f7f3ec;
+  --sand-light: #f0ebe0;
+  --sand: #e2d9c8;
+  --terracotta: #b8845a;
+  --terracotta-deep: #9a6a42;
+  --ink: #1a1814;
+  --ink-warm: #2e2820;
+  --warm-brown: #6a5a48;
+  --cream: #faf6ef;
+  --danger: #c0392b;
+  --success: #27ae60;
+}
+
+body {
+  font-family: 'Noto Naskh Arabic', serif;
+  background: var(--sand-white);
+  color: var(--ink);
+  min-height: 100vh;
+}
+
+/* ===== LOGIN ===== */
+.login-screen {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--ink-warm);
+}
+
+.login-box {
+  background: var(--cream);
+  padding: 3rem 2.5rem;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 380px;
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+}
+
+.login-box h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--ink);
+}
+
+.login-box .subtitle {
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 0.8rem;
+  color: var(--warm-brown);
+  margin-bottom: 2rem;
+  direction: ltr;
+}
+
+.login-box input {
+  width: 100%;
+  padding: 0.9rem 1.2rem;
+  border: 1px solid var(--sand);
+  border-radius: 6px;
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 0.95rem;
+  background: var(--sand-white);
+  color: var(--ink);
+  margin-bottom: 1rem;
+  text-align: center;
+  direction: ltr;
+}
+
+.login-box input:focus {
+  outline: none;
+  border-color: var(--terracotta);
+}
+
+.login-error {
+  color: var(--danger);
+  font-size: 0.82rem;
+  margin-bottom: 1rem;
+  display: none;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.8rem 2.5rem;
+  background: var(--terracotta);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-family: 'Noto Naskh Arabic', serif;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background 0.3s;
+  width: 100%;
+}
+
+.btn:hover { background: var(--terracotta-deep); }
+
+/* ===== DASHBOARD ===== */
+.dashboard { display: none; }
+
+.dash-header {
+  background: var(--ink-warm);
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.dash-header h2 {
+  color: var(--cream);
+  font-size: 1.1rem;
+}
+
+.dash-header .logout-btn {
+  background: none;
+  border: 1px solid rgba(250,246,239,0.2);
+  color: rgba(250,246,239,0.6);
+  padding: 0.4rem 1.2rem;
+  border-radius: 20px;
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.dash-header .logout-btn:hover {
+  border-color: var(--terracotta);
+  color: var(--cream);
+}
+
+.dash-content {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  gap: 0;
+  margin-bottom: 2rem;
+  border-bottom: 2px solid var(--sand);
+}
+
+.tab-btn {
+  padding: 0.8rem 1.8rem;
+  background: none;
+  border: none;
+  font-family: 'Noto Naskh Arabic', serif;
+  font-size: 0.9rem;
+  color: var(--warm-brown);
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -2px;
+  transition: all 0.3s;
+}
+
+.tab-btn.active {
+  color: var(--terracotta);
+  border-bottom-color: var(--terracotta);
+}
+
+.tab-panel { display: none; }
+.tab-panel.active { display: block; }
+
+/* Post Form */
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+  color: var(--ink-warm);
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: 1px solid var(--sand);
+  border-radius: 6px;
+  font-family: 'Noto Naskh Arabic', serif;
+  font-size: 0.95rem;
+  background: white;
+  color: var(--ink);
+  resize: vertical;
+}
+
+.form-group textarea { min-height: 150px; line-height: 1.8; }
+
+.form-group input[dir="ltr"],
+.form-group textarea[dir="ltr"] {
+  font-family: 'Nunito Sans', sans-serif;
+  direction: ltr;
+  text-align: left;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--terracotta);
+}
+
+.form-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.btn-secondary {
+  padding: 0.7rem 2rem;
+  background: var(--sand-light);
+  color: var(--warm-brown);
+  border: 1px solid var(--sand);
+  border-radius: 6px;
+  font-family: 'Noto Naskh Arabic', serif;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn-secondary:hover { background: var(--sand); }
+
+.btn-small {
+  padding: 0.5rem 1.2rem;
+  font-size: 0.8rem;
+}
+
+.btn-danger {
+  background: none;
+  border: 1px solid var(--danger);
+  color: var(--danger);
+}
+
+.btn-danger:hover { background: var(--danger); color: white; }
+
+/* Post List */
+.post-list { list-style: none; }
+
+.post-item {
+  background: white;
+  border: 1px solid var(--sand);
+  border-radius: 6px;
+  padding: 1.2rem 1.5rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.post-item-info h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 0.2rem;
+}
+
+.post-item-info .date {
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 0.72rem;
+  color: var(--warm-brown);
+  direction: ltr;
+  text-align: right;
+}
+
+.post-item-actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 3rem;
+  color: var(--warm-brown);
+  font-size: 0.95rem;
+}
+
+.toast {
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%) translateY(100px);
+  background: var(--ink-warm);
+  color: var(--cream);
+  padding: 0.8rem 2rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  z-index: 999;
+  transition: transform 0.4s ease;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+}
+
+.toast.show { transform: translateX(-50%) translateY(0); }
+</style>
+</head>
+<body>
+
+<!-- Login Screen -->
+<div class="login-screen" id="loginScreen">
+  <div class="login-box">
+    <h1>لوحة التحكم</h1>
+    <p class="subtitle">Admin Panel — Afrah Al Sabah</p>
+    <input type="password" id="passwordInput" placeholder="كلمة المرور" onkeydown="if(event.key==='Enter')doLogin()">
+    <p class="login-error" id="loginError">كلمة المرور غير صحيحة</p>
+    <button class="btn" onclick="doLogin()">دخول</button>
+  </div>
+</div>
+
+<!-- Dashboard -->
+<div class="dashboard" id="dashboard">
+  <div class="dash-header">
+    <h2>لوحة التحكم — أفراح الصباح</h2>
+    <button class="logout-btn" onclick="doLogout()">تسجيل خروج</button>
+  </div>
+
+  <div class="dash-content">
+    <div class="tabs">
+      <button class="tab-btn active" onclick="switchTab('posts')">المدوّنة</button>
+      <button class="tab-btn" onclick="switchTab('new-post')">تدوينة جديدة</button>
+    </div>
+
+    <!-- Posts List -->
+    <div class="tab-panel active" id="tab-posts">
+      <ul class="post-list" id="postList">
+        <li class="empty-state">جارٍ التحميل...</li>
+      </ul>
+    </div>
+
+    <!-- New/Edit Post -->
+    <div class="tab-panel" id="tab-new-post">
+      <input type="hidden" id="editPostId">
+      <div class="form-group">
+        <label>عنوان التدوينة (عربي)</label>
+        <input type="text" id="postTitleAr" placeholder="أدخل العنوان بالعربية">
+      </div>
+      <div class="form-group">
+        <label>Title (English)</label>
+        <input type="text" id="postTitleEn" placeholder="Enter title in English" dir="ltr">
+      </div>
+      <div class="form-group">
+        <label>المحتوى (عربي)</label>
+        <textarea id="postBodyAr" placeholder="اكتب هنا..."></textarea>
+      </div>
+      <div class="form-group">
+        <label>Content (English)</label>
+        <textarea id="postBodyEn" placeholder="Write here..." dir="ltr"></textarea>
+      </div>
+      <div class="form-actions">
+        <button class="btn" onclick="savePost()">نشر</button>
+        <button class="btn-secondary" onclick="clearForm(); switchTab('posts')">إلغاء</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+let token = localStorage.getItem('admin_token');
+
+// Check if already logged in
+if (token) showDashboard();
+
+async function doLogin() {
+  const pw = document.getElementById('passwordInput').value;
+  try {
+    const res = await fetch('/api/login', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ password: pw })
+    });
+    const data = await res.json();
+    if (data.success) {
+      token = data.token;
+      localStorage.setItem('admin_token', token);
+      showDashboard();
+    } else {
+      document.getElementById('loginError').style.display = 'block';
+    }
+  } catch (e) {
+    document.getElementById('loginError').style.display = 'block';
+  }
+}
+
+function doLogout() {
+  token = null;
+  localStorage.removeItem('admin_token');
+  document.getElementById('dashboard').style.display = 'none';
+  document.getElementById('loginScreen').style.display = 'flex';
+  document.getElementById('passwordInput').value = '';
+}
+
+function showDashboard() {
+  document.getElementById('loginScreen').style.display = 'none';
+  document.getElementById('dashboard').style.display = 'block';
+  loadPosts();
+}
+
+function switchTab(name) {
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  document.getElementById('tab-' + name).classList.add('active');
+  document.querySelector(`[onclick="switchTab('${name}')"]`).classList.add('active');
+  if (name === 'posts') loadPosts();
+}
+
+async function loadPosts() {
+  try {
+    const res = await fetch('/api/posts');
+    const posts = await res.json();
+    const list = document.getElementById('postList');
+
+    if (posts.length === 0) {
+      list.innerHTML = '<li class="empty-state">لا توجد تدوينات بعد. أضف أول تدوينة!</li>';
+      return;
+    }
+
+    list.innerHTML = posts.map(p => `
+      <li class="post-item">
+        <div class="post-item-info">
+          <h3>${p.title_ar || p.title_en || 'بدون عنوان'}</h3>
+          <p class="date">${new Date(p.date).toLocaleDateString('ar-KW', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
+        </div>
+        <div class="post-item-actions">
+          <button class="btn-secondary btn-small" onclick="editPost('${p.id}')">تعديل</button>
+          <button class="btn-secondary btn-small btn-danger" onclick="deletePost('${p.id}')">حذف</button>
+        </div>
+      </li>
+    `).join('');
+  } catch (e) {
+    document.getElementById('postList').innerHTML = '<li class="empty-state">خطأ في تحميل التدوينات</li>';
+  }
+}
+
+async function savePost() {
+  const id = document.getElementById('editPostId').value;
+  const post = {
+    title_ar: document.getElementById('postTitleAr').value,
+    title_en: document.getElementById('postTitleEn').value,
+    body_ar: document.getElementById('postBodyAr').value,
+    body_en: document.getElementById('postBodyEn').value,
+  };
+
+  if (!post.title_ar && !post.title_en) {
+    showToast('الرجاء إدخال عنوان');
+    return;
+  }
+
+  try {
+    const method = id ? 'PUT' : 'POST';
+    if (id) post.id = id;
+
+    await fetch('/api/posts', {
+      method,
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${token}`
+      },
+      body: JSON.stringify(post)
+    });
+
+    clearForm();
+    switchTab('posts');
+    showToast(id ? 'تم تحديث التدوينة' : 'تم نشر التدوينة');
+  } catch (e) {
+    showToast('حدث خطأ');
+  }
+}
+
+async function editPost(id) {
+  try {
+    const res = await fetch('/api/posts');
+    const posts = await res.json();
+    const post = posts.find(p => p.id === id);
+    if (!post) return;
+
+    document.getElementById('editPostId').value = post.id;
+    document.getElementById('postTitleAr').value = post.title_ar;
+    document.getElementById('postTitleEn').value = post.title_en;
+    document.getElementById('postBodyAr').value = post.body_ar;
+    document.getElementById('postBodyEn').value = post.body_en;
+    switchTab('new-post');
+  } catch (e) {
+    showToast('حدث خطأ');
+  }
+}
+
+async function deletePost(id) {
+  if (!confirm('هل تريد حذف هذه التدوينة؟')) return;
+
+  try {
+    await fetch('/api/posts', {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${token}`
+      },
+      body: JSON.stringify({ id })
+    });
+    loadPosts();
+    showToast('تم حذف التدوينة');
+  } catch (e) {
+    showToast('حدث خطأ');
+  }
+}
+
+function clearForm() {
+  document.getElementById('editPostId').value = '';
+  document.getElementById('postTitleAr').value = '';
+  document.getElementById('postTitleEn').value = '';
+  document.getElementById('postBodyAr').value = '';
+  document.getElementById('postBodyEn').value = '';
+}
+
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 3000);
+}
+</script>
+</body>
+</html>
