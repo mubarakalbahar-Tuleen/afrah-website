@@ -1,0 +1,6 @@
+name = "silent-sunset-e2ea"
+pages_build_output_dir = "."
+
+[[kv_namespaces]]
+binding = "SITE_KV"
+id = "001c950bd84a402088522b319e79130d"
