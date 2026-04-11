@@ -1260,6 +1260,67 @@ footer .en {
   }
   loadBlogPosts();
 
+  // ===== LOAD SITE CONTENT FROM CMS =====
+  async function loadSiteContent() {
+    try {
+      const res = await fetch('/api/content');
+      const c = await res.json();
+      if (!c || Object.keys(c).length === 0) return;
+
+      // Hero
+      if (c.heroNameAr) document.querySelector('.hero-name-ar').textContent = c.heroNameAr;
+      if (c.heroNameEn) document.querySelector('.hero-name-en').textContent = c.heroNameEn;
+      if (c.heroTaglineAr) document.querySelector('.hero-tagline').textContent = c.heroTaglineAr;
+      if (c.heroTaglineEn) document.querySelector('.hero-tagline-en').textContent = c.heroTaglineEn;
+      const quotePs = document.querySelectorAll('.hero-quote p');
+      if (c.heroQuoteAr && quotePs[0]) quotePs[0].textContent = '"' + c.heroQuoteAr + '"';
+      if (c.heroQuoteEn && quotePs[1]) quotePs[1].textContent = '"' + c.heroQuoteEn + '"';
+
+      // About
+      const aboutArPs = document.querySelectorAll('.about-ar p');
+      const aboutHighlight = document.querySelector('.about-highlight');
+      if (c.aboutText1Ar && aboutArPs[0]) aboutArPs[0].textContent = c.aboutText1Ar;
+      if (c.aboutHighlightAr && aboutHighlight) aboutHighlight.textContent = c.aboutHighlightAr;
+      if (c.aboutText2Ar && aboutArPs[1]) aboutArPs[1].innerHTML = c.aboutText2Ar;
+      const aboutEnPs = document.querySelectorAll('.about-en p');
+      if (c.aboutText1En && aboutEnPs[0]) aboutEnPs[0].textContent = c.aboutText1En;
+      if (c.aboutText2En && aboutEnPs[1]) aboutEnPs[1].innerHTML = c.aboutText2En;
+
+      // Books
+      const cards = document.querySelectorAll('.book-card');
+      if (cards[0]) {
+        if (c.book1TitleAr) cards[0].querySelector('.book-title-ar').textContent = c.book1TitleAr;
+        if (c.book1TitleEn) cards[0].querySelector('.book-title-en').textContent = c.book1TitleEn;
+        if (c.book1Desc) cards[0].querySelector('.book-desc').textContent = c.book1Desc;
+        const badge = cards[0].querySelector('.book-badge');
+        if (c.book1Badge && badge) badge.textContent = c.book1Badge;
+      }
+      if (cards[1]) {
+        if (c.book2TitleAr) cards[1].querySelector('.book-title-ar').textContent = c.book2TitleAr;
+        if (c.book2TitleEn) cards[1].querySelector('.book-title-en').textContent = c.book2TitleEn;
+        if (c.book2Desc) cards[1].querySelector('.book-desc').textContent = c.book2Desc;
+      }
+      if (cards[2]) {
+        if (c.book3TitleAr) cards[2].querySelector('.book-title-ar').textContent = c.book3TitleAr;
+        if (c.book3TitleEn) cards[2].querySelector('.book-title-en').textContent = c.book3TitleEn;
+        if (c.book3Desc) cards[2].querySelector('.book-desc').textContent = c.book3Desc;
+      }
+
+      // Contact
+      const emailLink = document.querySelector('.contact-link[href^="mailto:"]');
+      if (c.contactEmail && emailLink) { emailLink.href = 'mailto:' + c.contactEmail; emailLink.lastChild.textContent = c.contactEmail; }
+      const igLink = document.querySelector('.contact-link[href*="instagram"]');
+      if (c.contactInstagram && igLink) { igLink.href = 'https://www.instagram.com/' + c.contactInstagram.replace('@',''); igLink.lastChild.textContent = c.contactInstagram; }
+      const xLink = document.querySelector('.contact-link[href*="x.com"]');
+      if (c.contactTwitter && xLink) { xLink.href = 'https://x.com/' + c.contactTwitter.replace('@',''); xLink.lastChild.textContent = c.contactTwitter; }
+      const descAr = document.querySelector('.contact-desc');
+      const descEn = document.querySelector('.contact-desc-en');
+      if (c.contactDescAr && descAr) descAr.textContent = c.contactDescAr;
+      if (c.contactDescEn && descEn) descEn.textContent = c.contactDescEn;
+    } catch (e) {}
+  }
+  loadSiteContent();
+
   // ===== GOLDEN DUST PARTICLES =====
   const canvas = document.getElementById('particles');
   const ctx = canvas.getContext('2d');

@@ -7,362 +7,194 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;500;600;700&family=Nunito+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-
 :root {
-  --sand-white: #f7f3ec;
-  --sand-light: #f0ebe0;
-  --sand: #e2d9c8;
-  --terracotta: #b8845a;
-  --terracotta-deep: #9a6a42;
-  --ink: #1a1814;
-  --ink-warm: #2e2820;
-  --warm-brown: #6a5a48;
-  --cream: #faf6ef;
-  --danger: #c0392b;
-  --success: #27ae60;
+  --sand-white: #f7f3ec; --sand-light: #f0ebe0; --sand: #e2d9c8;
+  --terracotta: #b8845a; --terracotta-deep: #9a6a42;
+  --ink: #1a1814; --ink-warm: #2e2820; --warm-brown: #6a5a48;
+  --cream: #faf6ef; --danger: #c0392b; --success: #27ae60;
 }
+body { font-family: 'Noto Naskh Arabic', serif; background: var(--sand-white); color: var(--ink); min-height: 100vh; }
 
-body {
-  font-family: 'Noto Naskh Arabic', serif;
-  background: var(--sand-white);
-  color: var(--ink);
-  min-height: 100vh;
+.login-screen { min-height: 100vh; display: flex; align-items: center; justify-content: center; background: var(--ink-warm); }
+.login-box { background: var(--cream); padding: 3rem 2.5rem; border-radius: 8px; width: 90%; max-width: 380px; text-align: center; box-shadow: 0 20px 60px rgba(0,0,0,0.2); }
+.login-box h1 { font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem; }
+.login-box .subtitle { font-family: 'Nunito Sans', sans-serif; font-size: 0.8rem; color: var(--warm-brown); margin-bottom: 2rem; direction: ltr; }
+.login-error { color: var(--danger); font-size: 0.82rem; margin-bottom: 1rem; display: none; }
+
+input, textarea, select {
+  width: 100%; padding: 0.8rem 1rem; border: 1px solid var(--sand); border-radius: 6px;
+  font-family: 'Noto Naskh Arabic', serif; font-size: 0.95rem; background: white; color: var(--ink); resize: vertical;
 }
+input:focus, textarea:focus { outline: none; border-color: var(--terracotta); }
+textarea { min-height: 120px; line-height: 1.8; }
+[dir="ltr"] { font-family: 'Nunito Sans', sans-serif; direction: ltr; text-align: left; }
+.login-box input { text-align: center; direction: ltr; margin-bottom: 1rem; }
 
-/* ===== LOGIN ===== */
-.login-screen {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--ink-warm);
-}
-
-.login-box {
-  background: var(--cream);
-  padding: 3rem 2.5rem;
-  border-radius: 8px;
-  width: 90%;
-  max-width: 380px;
-  text-align: center;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.2);
-}
-
-.login-box h1 {
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin-bottom: 0.5rem;
-  color: var(--ink);
-}
-
-.login-box .subtitle {
-  font-family: 'Nunito Sans', sans-serif;
-  font-size: 0.8rem;
-  color: var(--warm-brown);
-  margin-bottom: 2rem;
-  direction: ltr;
-}
-
-.login-box input {
-  width: 100%;
-  padding: 0.9rem 1.2rem;
-  border: 1px solid var(--sand);
-  border-radius: 6px;
-  font-family: 'Nunito Sans', sans-serif;
-  font-size: 0.95rem;
-  background: var(--sand-white);
-  color: var(--ink);
-  margin-bottom: 1rem;
-  text-align: center;
-  direction: ltr;
-}
-
-.login-box input:focus {
-  outline: none;
-  border-color: var(--terracotta);
-}
-
-.login-error {
-  color: var(--danger);
-  font-size: 0.82rem;
-  margin-bottom: 1rem;
-  display: none;
-}
-
-.btn {
-  display: inline-block;
-  padding: 0.8rem 2.5rem;
-  background: var(--terracotta);
-  color: white;
-  border: none;
-  border-radius: 6px;
-  font-family: 'Noto Naskh Arabic', serif;
-  font-size: 0.95rem;
-  cursor: pointer;
-  transition: background 0.3s;
-  width: 100%;
-}
-
+.btn { display: inline-block; padding: 0.8rem 2rem; background: var(--terracotta); color: white; border: none; border-radius: 6px; font-family: 'Noto Naskh Arabic', serif; font-size: 0.95rem; cursor: pointer; transition: background 0.3s; }
 .btn:hover { background: var(--terracotta-deep); }
+.btn-secondary { padding: 0.7rem 1.5rem; background: var(--sand-light); color: var(--warm-brown); border: 1px solid var(--sand); border-radius: 6px; font-family: 'Noto Naskh Arabic', serif; font-size: 0.9rem; cursor: pointer; }
+.btn-secondary:hover { background: var(--sand); }
+.btn-small { padding: 0.5rem 1.2rem; font-size: 0.8rem; }
+.btn-danger { background: none; border: 1px solid var(--danger); color: var(--danger); }
+.btn-danger:hover { background: var(--danger); color: white; }
+.btn-full { width: 100%; }
 
-/* ===== DASHBOARD ===== */
 .dashboard { display: none; }
+.dash-header { background: var(--ink-warm); padding: 1rem 2rem; display: flex; align-items: center; justify-content: space-between; }
+.dash-header h2 { color: var(--cream); font-size: 1.1rem; }
+.logout-btn { background: none; border: 1px solid rgba(250,246,239,0.2); color: rgba(250,246,239,0.6); padding: 0.4rem 1.2rem; border-radius: 20px; font-family: 'Nunito Sans', sans-serif; font-size: 0.75rem; cursor: pointer; }
+.logout-btn:hover { border-color: var(--terracotta); color: var(--cream); }
 
-.dash-header {
-  background: var(--ink-warm);
-  padding: 1rem 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
+.dash-content { max-width: 900px; margin: 2rem auto; padding: 0 1.5rem; }
 
-.dash-header h2 {
-  color: var(--cream);
-  font-size: 1.1rem;
-}
-
-.dash-header .logout-btn {
-  background: none;
-  border: 1px solid rgba(250,246,239,0.2);
-  color: rgba(250,246,239,0.6);
-  padding: 0.4rem 1.2rem;
-  border-radius: 20px;
-  font-family: 'Nunito Sans', sans-serif;
-  font-size: 0.75rem;
-  cursor: pointer;
-  transition: all 0.3s;
-}
-
-.dash-header .logout-btn:hover {
-  border-color: var(--terracotta);
-  color: var(--cream);
-}
-
-.dash-content {
-  max-width: 900px;
-  margin: 2rem auto;
-  padding: 0 1.5rem;
-}
-
-/* Tabs */
-.tabs {
-  display: flex;
-  gap: 0;
-  margin-bottom: 2rem;
-  border-bottom: 2px solid var(--sand);
-}
-
-.tab-btn {
-  padding: 0.8rem 1.8rem;
-  background: none;
-  border: none;
-  font-family: 'Noto Naskh Arabic', serif;
-  font-size: 0.9rem;
-  color: var(--warm-brown);
-  cursor: pointer;
-  border-bottom: 2px solid transparent;
-  margin-bottom: -2px;
-  transition: all 0.3s;
-}
-
-.tab-btn.active {
-  color: var(--terracotta);
-  border-bottom-color: var(--terracotta);
-}
+.tabs { display: flex; gap: 0; margin-bottom: 2rem; border-bottom: 2px solid var(--sand); flex-wrap: wrap; }
+.tab-btn { padding: 0.7rem 1.2rem; background: none; border: none; font-family: 'Noto Naskh Arabic', serif; font-size: 0.85rem; color: var(--warm-brown); cursor: pointer; border-bottom: 2px solid transparent; margin-bottom: -2px; transition: all 0.3s; }
+.tab-btn.active { color: var(--terracotta); border-bottom-color: var(--terracotta); }
 
 .tab-panel { display: none; }
 .tab-panel.active { display: block; }
 
-/* Post Form */
-.form-group {
-  margin-bottom: 1.5rem;
-}
+.form-group { margin-bottom: 1.5rem; }
+.form-group label { display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.4rem; color: var(--ink-warm); }
+.form-actions { display: flex; gap: 1rem; margin-top: 1.5rem; }
 
-.form-group label {
-  display: block;
-  font-size: 0.85rem;
-  font-weight: 600;
-  margin-bottom: 0.4rem;
-  color: var(--ink-warm);
-}
+.section-card { background: white; border: 1px solid var(--sand); border-radius: 8px; padding: 1.5rem; margin-bottom: 1.5rem; }
+.section-card h3 { font-size: 1rem; color: var(--terracotta); margin-bottom: 1rem; border-bottom: 1px solid var(--sand-light); padding-bottom: 0.5rem; }
 
-.form-group input,
-.form-group textarea {
-  width: 100%;
-  padding: 0.8rem 1rem;
-  border: 1px solid var(--sand);
-  border-radius: 6px;
-  font-family: 'Noto Naskh Arabic', serif;
-  font-size: 0.95rem;
-  background: white;
-  color: var(--ink);
-  resize: vertical;
-}
-
-.form-group textarea { min-height: 150px; line-height: 1.8; }
-
-.form-group input[dir="ltr"],
-.form-group textarea[dir="ltr"] {
-  font-family: 'Nunito Sans', sans-serif;
-  direction: ltr;
-  text-align: left;
-}
-
-.form-group input:focus,
-.form-group textarea:focus {
-  outline: none;
-  border-color: var(--terracotta);
-}
-
-.form-actions {
-  display: flex;
-  gap: 1rem;
-  margin-top: 1.5rem;
-}
-
-.btn-secondary {
-  padding: 0.7rem 2rem;
-  background: var(--sand-light);
-  color: var(--warm-brown);
-  border: 1px solid var(--sand);
-  border-radius: 6px;
-  font-family: 'Noto Naskh Arabic', serif;
-  font-size: 0.9rem;
-  cursor: pointer;
-  transition: all 0.3s;
-}
-
-.btn-secondary:hover { background: var(--sand); }
-
-.btn-small {
-  padding: 0.5rem 1.2rem;
-  font-size: 0.8rem;
-}
-
-.btn-danger {
-  background: none;
-  border: 1px solid var(--danger);
-  color: var(--danger);
-}
-
-.btn-danger:hover { background: var(--danger); color: white; }
-
-/* Post List */
 .post-list { list-style: none; }
+.post-item { background: white; border: 1px solid var(--sand); border-radius: 6px; padding: 1.2rem 1.5rem; margin-bottom: 1rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+.post-item-info h3 { font-size: 1rem; font-weight: 600; margin-bottom: 0.2rem; }
+.post-item-info .date { font-family: 'Nunito Sans', sans-serif; font-size: 0.72rem; color: var(--warm-brown); direction: ltr; text-align: right; }
+.post-item-actions { display: flex; gap: 0.5rem; flex-shrink: 0; }
+.empty-state { text-align: center; padding: 3rem; color: var(--warm-brown); }
 
-.post-item {
-  background: white;
-  border: 1px solid var(--sand);
-  border-radius: 6px;
-  padding: 1.2rem 1.5rem;
-  margin-bottom: 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-}
+.book-edit-card { background: white; border: 1px solid var(--sand); border-radius: 8px; padding: 1.5rem; margin-bottom: 1rem; }
+.book-edit-card h4 { font-size: 0.9rem; color: var(--terracotta); margin-bottom: 1rem; }
 
-.post-item-info h3 {
-  font-size: 1rem;
-  font-weight: 600;
-  color: var(--ink);
-  margin-bottom: 0.2rem;
-}
-
-.post-item-info .date {
-  font-family: 'Nunito Sans', sans-serif;
-  font-size: 0.72rem;
-  color: var(--warm-brown);
-  direction: ltr;
-  text-align: right;
-}
-
-.post-item-actions {
-  display: flex;
-  gap: 0.5rem;
-  flex-shrink: 0;
-}
-
-.empty-state {
-  text-align: center;
-  padding: 3rem;
-  color: var(--warm-brown);
-  font-size: 0.95rem;
-}
-
-.toast {
-  position: fixed;
-  bottom: 2rem;
-  left: 50%;
-  transform: translateX(-50%) translateY(100px);
-  background: var(--ink-warm);
-  color: var(--cream);
-  padding: 0.8rem 2rem;
-  border-radius: 8px;
-  font-size: 0.85rem;
-  z-index: 999;
-  transition: transform 0.4s ease;
-  box-shadow: 0 8px 30px rgba(0,0,0,0.2);
-}
-
+.toast { position: fixed; bottom: 2rem; left: 50%; transform: translateX(-50%) translateY(100px); background: var(--ink-warm); color: var(--cream); padding: 0.8rem 2rem; border-radius: 8px; font-size: 0.85rem; z-index: 999; transition: transform 0.4s ease; box-shadow: 0 8px 30px rgba(0,0,0,0.2); }
 .toast.show { transform: translateX(-50%) translateY(0); }
 </style>
 </head>
 <body>
 
-<!-- Login Screen -->
+<!-- Login -->
 <div class="login-screen" id="loginScreen">
   <div class="login-box">
     <h1>لوحة التحكم</h1>
     <p class="subtitle">Admin Panel — Afrah Al Sabah</p>
     <input type="password" id="passwordInput" placeholder="كلمة المرور" onkeydown="if(event.key==='Enter')doLogin()">
     <p class="login-error" id="loginError">كلمة المرور غير صحيحة</p>
-    <button class="btn" onclick="doLogin()">دخول</button>
+    <button class="btn btn-full" onclick="doLogin()">دخول</button>
   </div>
 </div>
 
 <!-- Dashboard -->
 <div class="dashboard" id="dashboard">
   <div class="dash-header">
-    <h2>لوحة التحكم — أفراح الصباح</h2>
+    <h2>لوحة التحكم</h2>
     <button class="logout-btn" onclick="doLogout()">تسجيل خروج</button>
   </div>
-
   <div class="dash-content">
     <div class="tabs">
       <button class="tab-btn active" onclick="switchTab('posts')">المدوّنة</button>
       <button class="tab-btn" onclick="switchTab('new-post')">تدوينة جديدة</button>
+      <button class="tab-btn" onclick="switchTab('hero')">الرئيسية</button>
+      <button class="tab-btn" onclick="switchTab('about')">عنّي</button>
+      <button class="tab-btn" onclick="switchTab('books')">الكتب</button>
+      <button class="tab-btn" onclick="switchTab('contact')">تواصل</button>
+      <button class="tab-btn" onclick="switchTab('password')">كلمة المرور</button>
     </div>
 
-    <!-- Posts List -->
+    <!-- Blog Posts -->
     <div class="tab-panel active" id="tab-posts">
-      <ul class="post-list" id="postList">
-        <li class="empty-state">جارٍ التحميل...</li>
-      </ul>
+      <ul class="post-list" id="postList"><li class="empty-state">جارٍ التحميل...</li></ul>
     </div>
 
     <!-- New/Edit Post -->
     <div class="tab-panel" id="tab-new-post">
       <input type="hidden" id="editPostId">
-      <div class="form-group">
-        <label>عنوان التدوينة (عربي)</label>
-        <input type="text" id="postTitleAr" placeholder="أدخل العنوان بالعربية">
-      </div>
-      <div class="form-group">
-        <label>Title (English)</label>
-        <input type="text" id="postTitleEn" placeholder="Enter title in English" dir="ltr">
-      </div>
-      <div class="form-group">
-        <label>المحتوى (عربي)</label>
-        <textarea id="postBodyAr" placeholder="اكتب هنا..."></textarea>
-      </div>
-      <div class="form-group">
-        <label>Content (English)</label>
-        <textarea id="postBodyEn" placeholder="Write here..." dir="ltr"></textarea>
-      </div>
+      <div class="form-group"><label>عنوان التدوينة (عربي)</label><input type="text" id="postTitleAr" placeholder="أدخل العنوان بالعربية"></div>
+      <div class="form-group"><label>Title (English)</label><input type="text" id="postTitleEn" placeholder="Enter title in English" dir="ltr"></div>
+      <div class="form-group"><label>المحتوى (عربي)</label><textarea id="postBodyAr" placeholder="اكتب هنا..."></textarea></div>
+      <div class="form-group"><label>Content (English)</label><textarea id="postBodyEn" placeholder="Write here..." dir="ltr"></textarea></div>
       <div class="form-actions">
         <button class="btn" onclick="savePost()">نشر</button>
         <button class="btn-secondary" onclick="clearForm(); switchTab('posts')">إلغاء</button>
+      </div>
+    </div>
+
+    <!-- Hero Section -->
+    <div class="tab-panel" id="tab-hero">
+      <div class="section-card">
+        <h3>قسم الرئيسية — Hero</h3>
+        <div class="form-group"><label>الاسم (عربي)</label><input type="text" id="heroNameAr" placeholder="أفراح مبارك الصباح"></div>
+        <div class="form-group"><label>Name (English)</label><input type="text" id="heroNameEn" placeholder="Afrah Mubarak Al Sabah" dir="ltr"></div>
+        <div class="form-group"><label>الوصف (عربي)</label><input type="text" id="heroTaglineAr" placeholder="شاعرة كويتية · مثقفة · مراقبة · عاشقة للطبيعة"></div>
+        <div class="form-group"><label>Tagline (English)</label><input type="text" id="heroTaglineEn" placeholder="Kuwaiti Poet · Intellectual · Observer · Nature Lover" dir="ltr"></div>
+        <div class="form-group"><label>اقتباس شعري (عربي)</label><textarea id="heroQuoteAr" placeholder="سطر شعري مفضّل..." style="min-height:80px"></textarea></div>
+        <div class="form-group"><label>Quote (English)</label><textarea id="heroQuoteEn" placeholder="A favourite line of poetry..." dir="ltr" style="min-height:80px"></textarea></div>
+        <div class="form-actions"><button class="btn" onclick="saveContent('hero')">حفظ</button></div>
+      </div>
+    </div>
+
+    <!-- About Section -->
+    <div class="tab-panel" id="tab-about">
+      <div class="section-card">
+        <h3>عنّي — About</h3>
+        <div class="form-group"><label>النص الأول (عربي)</label><textarea id="aboutText1Ar" placeholder="الفقرة الأولى بالعربية..."></textarea></div>
+        <div class="form-group"><label>الاقتباس المميز (عربي)</label><textarea id="aboutHighlightAr" placeholder="النص المميز..." style="min-height:80px"></textarea></div>
+        <div class="form-group"><label>النص الثاني (عربي)</label><textarea id="aboutText2Ar" placeholder="الفقرة الثانية بالعربية..."></textarea></div>
+        <div class="form-group"><label>Paragraph 1 (English)</label><textarea id="aboutText1En" placeholder="First paragraph in English..." dir="ltr"></textarea></div>
+        <div class="form-group"><label>Paragraph 2 (English)</label><textarea id="aboutText2En" placeholder="Second paragraph in English..." dir="ltr"></textarea></div>
+        <div class="form-actions"><button class="btn" onclick="saveContent('about')">حفظ</button></div>
+      </div>
+    </div>
+
+    <!-- Books Section -->
+    <div class="tab-panel" id="tab-books">
+      <div class="book-edit-card">
+        <h4>الكتاب الأول — Book 1</h4>
+        <div class="form-group"><label>العنوان (عربي)</label><input type="text" id="book1TitleAr" placeholder="شغف أزرق"></div>
+        <div class="form-group"><label>Title (English)</label><input type="text" id="book1TitleEn" placeholder="Blue Passion" dir="ltr"></div>
+        <div class="form-group"><label>الوصف (English)</label><input type="text" id="book1Desc" placeholder="Her latest collection..." dir="ltr"></div>
+        <div class="form-group"><label>شارة</label><input type="text" id="book1Badge" placeholder="أحدث إصدار · ثنائي اللغة"></div>
+      </div>
+      <div class="book-edit-card">
+        <h4>الكتاب الثاني — Book 2</h4>
+        <div class="form-group"><label>العنوان (عربي)</label><input type="text" id="book2TitleAr" placeholder="صندوق"></div>
+        <div class="form-group"><label>Title (English)</label><input type="text" id="book2TitleEn" placeholder="Sundooq" dir="ltr"></div>
+        <div class="form-group"><label>الوصف (English)</label><input type="text" id="book2Desc" placeholder="A poetic exploration..." dir="ltr"></div>
+      </div>
+      <div class="book-edit-card">
+        <h4>الكتاب الثالث — Book 3</h4>
+        <div class="form-group"><label>العنوان (عربي)</label><input type="text" id="book3TitleAr" placeholder="عويل الصمت لا يسمع"></div>
+        <div class="form-group"><label>Title (English)</label><input type="text" id="book3TitleEn" placeholder="The Wail of Silence Goes Unheard" dir="ltr"></div>
+        <div class="form-group"><label>الوصف (English)</label><input type="text" id="book3Desc" placeholder="Verses that give voice..." dir="ltr"></div>
+      </div>
+      <div class="form-actions"><button class="btn" onclick="saveContent('books')">حفظ الكتب</button></div>
+    </div>
+
+    <!-- Contact Section -->
+    <div class="tab-panel" id="tab-contact">
+      <div class="section-card">
+        <h3>تواصل — Contact</h3>
+        <div class="form-group"><label>البريد الإلكتروني</label><input type="email" id="contactEmail" placeholder="amsoct@hotmail.com" dir="ltr"></div>
+        <div class="form-group"><label>Instagram</label><input type="text" id="contactInstagram" placeholder="@afrahmalsabah" dir="ltr"></div>
+        <div class="form-group"><label>X (Twitter)</label><input type="text" id="contactTwitter" placeholder="@afrahMAlSabah" dir="ltr"></div>
+        <div class="form-group"><label>وصف التواصل (عربي)</label><input type="text" id="contactDescAr" placeholder="للاستفسارات أو التعاون أو مجرد التواصل."></div>
+        <div class="form-group"><label>Contact description (English)</label><input type="text" id="contactDescEn" placeholder="For inquiries, collaborations, or simply to connect." dir="ltr"></div>
+        <div class="form-actions"><button class="btn" onclick="saveContent('contact')">حفظ</button></div>
+      </div>
+    </div>
+
+    <!-- Password -->
+    <div class="tab-panel" id="tab-password">
+      <div class="section-card">
+        <h3>تغيير كلمة المرور</h3>
+        <div class="form-group"><label>كلمة المرور الحالية</label><input type="password" id="currentPw" dir="ltr"></div>
+        <div class="form-group"><label>كلمة المرور الجديدة</label><input type="password" id="newPw" dir="ltr"></div>
+        <div class="form-group"><label>تأكيد كلمة المرور الجديدة</label><input type="password" id="confirmPw" dir="ltr"></div>
+        <div class="form-actions"><button class="btn" onclick="changePassword()">تغيير</button></div>
       </div>
     </div>
   </div>
@@ -372,43 +204,25 @@ body {
 
 <script>
 let token = localStorage.getItem('admin_token');
-
-// Check if already logged in
 if (token) showDashboard();
 
 async function doLogin() {
   const pw = document.getElementById('passwordInput').value;
   try {
-    const res = await fetch('/api/login', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ password: pw })
-    });
+    const res = await fetch('/api/login', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ password: pw }) });
     const data = await res.json();
-    if (data.success) {
-      token = data.token;
-      localStorage.setItem('admin_token', token);
-      showDashboard();
-    } else {
-      document.getElementById('loginError').style.display = 'block';
-    }
-  } catch (e) {
-    document.getElementById('loginError').style.display = 'block';
-  }
+    if (data.success) { token = data.token; localStorage.setItem('admin_token', token); showDashboard(); }
+    else { document.getElementById('loginError').style.display = 'block'; }
+  } catch (e) { document.getElementById('loginError').style.display = 'block'; }
 }
 
-function doLogout() {
-  token = null;
-  localStorage.removeItem('admin_token');
-  document.getElementById('dashboard').style.display = 'none';
-  document.getElementById('loginScreen').style.display = 'flex';
-  document.getElementById('passwordInput').value = '';
-}
+function doLogout() { token = null; localStorage.removeItem('admin_token'); document.getElementById('dashboard').style.display = 'none'; document.getElementById('loginScreen').style.display = 'flex'; }
 
 function showDashboard() {
   document.getElementById('loginScreen').style.display = 'none';
   document.getElementById('dashboard').style.display = 'block';
   loadPosts();
+  loadContent();
 }
 
 function switchTab(name) {
@@ -419,17 +233,13 @@ function switchTab(name) {
   if (name === 'posts') loadPosts();
 }
 
+// ===== BLOG POSTS =====
 async function loadPosts() {
   try {
     const res = await fetch('/api/posts');
     const posts = await res.json();
     const list = document.getElementById('postList');
-
-    if (posts.length === 0) {
-      list.innerHTML = '<li class="empty-state">لا توجد تدوينات بعد. أضف أول تدوينة!</li>';
-      return;
-    }
-
+    if (posts.length === 0) { list.innerHTML = '<li class="empty-state">لا توجد تدوينات بعد.</li>'; return; }
     list.innerHTML = posts.map(p => `
       <li class="post-item">
         <div class="post-item-info">
@@ -440,99 +250,143 @@ async function loadPosts() {
           <button class="btn-secondary btn-small" onclick="editPost('${p.id}')">تعديل</button>
           <button class="btn-secondary btn-small btn-danger" onclick="deletePost('${p.id}')">حذف</button>
         </div>
-      </li>
-    `).join('');
-  } catch (e) {
-    document.getElementById('postList').innerHTML = '<li class="empty-state">خطأ في تحميل التدوينات</li>';
-  }
+      </li>`).join('');
+  } catch (e) { document.getElementById('postList').innerHTML = '<li class="empty-state">خطأ في التحميل</li>'; }
 }
 
 async function savePost() {
   const id = document.getElementById('editPostId').value;
-  const post = {
-    title_ar: document.getElementById('postTitleAr').value,
-    title_en: document.getElementById('postTitleEn').value,
-    body_ar: document.getElementById('postBodyAr').value,
-    body_en: document.getElementById('postBodyEn').value,
-  };
-
-  if (!post.title_ar && !post.title_en) {
-    showToast('الرجاء إدخال عنوان');
-    return;
-  }
-
+  const post = { title_ar: document.getElementById('postTitleAr').value, title_en: document.getElementById('postTitleEn').value, body_ar: document.getElementById('postBodyAr').value, body_en: document.getElementById('postBodyEn').value };
+  if (!post.title_ar && !post.title_en) { showToast('الرجاء إدخال عنوان'); return; }
   try {
-    const method = id ? 'PUT' : 'POST';
     if (id) post.id = id;
-
-    await fetch('/api/posts', {
-      method,
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${token}`
-      },
-      body: JSON.stringify(post)
-    });
-
-    clearForm();
-    switchTab('posts');
-    showToast(id ? 'تم تحديث التدوينة' : 'تم نشر التدوينة');
-  } catch (e) {
-    showToast('حدث خطأ');
-  }
+    await fetch('/api/posts', { method: id ? 'PUT' : 'POST', headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` }, body: JSON.stringify(post) });
+    clearForm(); switchTab('posts'); showToast(id ? 'تم التحديث' : 'تم النشر');
+  } catch (e) { showToast('حدث خطأ'); }
 }
 
 async function editPost(id) {
-  try {
-    const res = await fetch('/api/posts');
-    const posts = await res.json();
-    const post = posts.find(p => p.id === id);
-    if (!post) return;
-
-    document.getElementById('editPostId').value = post.id;
-    document.getElementById('postTitleAr').value = post.title_ar;
-    document.getElementById('postTitleEn').value = post.title_en;
-    document.getElementById('postBodyAr').value = post.body_ar;
-    document.getElementById('postBodyEn').value = post.body_en;
-    switchTab('new-post');
-  } catch (e) {
-    showToast('حدث خطأ');
-  }
+  const res = await fetch('/api/posts');
+  const posts = await res.json();
+  const p = posts.find(x => x.id === id);
+  if (!p) return;
+  document.getElementById('editPostId').value = p.id;
+  document.getElementById('postTitleAr').value = p.title_ar;
+  document.getElementById('postTitleEn').value = p.title_en;
+  document.getElementById('postBodyAr').value = p.body_ar;
+  document.getElementById('postBodyEn').value = p.body_en;
+  switchTab('new-post');
 }
 
 async function deletePost(id) {
   if (!confirm('هل تريد حذف هذه التدوينة؟')) return;
+  await fetch('/api/posts', { method: 'DELETE', headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` }, body: JSON.stringify({ id }) });
+  loadPosts(); showToast('تم الحذف');
+}
+
+function clearForm() { ['editPostId','postTitleAr','postTitleEn','postBodyAr','postBodyEn'].forEach(id => document.getElementById(id).value = ''); }
+
+// ===== SITE CONTENT =====
+let siteContent = {};
+
+async function loadContent() {
+  try {
+    const res = await fetch('/api/content');
+    siteContent = await res.json();
+    fillContentFields();
+  } catch (e) {}
+}
+
+function fillContentFields() {
+  const c = siteContent;
+  // Hero
+  if (c.heroNameAr) document.getElementById('heroNameAr').value = c.heroNameAr;
+  if (c.heroNameEn) document.getElementById('heroNameEn').value = c.heroNameEn;
+  if (c.heroTaglineAr) document.getElementById('heroTaglineAr').value = c.heroTaglineAr;
+  if (c.heroTaglineEn) document.getElementById('heroTaglineEn').value = c.heroTaglineEn;
+  if (c.heroQuoteAr) document.getElementById('heroQuoteAr').value = c.heroQuoteAr;
+  if (c.heroQuoteEn) document.getElementById('heroQuoteEn').value = c.heroQuoteEn;
+  // About
+  if (c.aboutText1Ar) document.getElementById('aboutText1Ar').value = c.aboutText1Ar;
+  if (c.aboutHighlightAr) document.getElementById('aboutHighlightAr').value = c.aboutHighlightAr;
+  if (c.aboutText2Ar) document.getElementById('aboutText2Ar').value = c.aboutText2Ar;
+  if (c.aboutText1En) document.getElementById('aboutText1En').value = c.aboutText1En;
+  if (c.aboutText2En) document.getElementById('aboutText2En').value = c.aboutText2En;
+  // Books
+  if (c.book1TitleAr) document.getElementById('book1TitleAr').value = c.book1TitleAr;
+  if (c.book1TitleEn) document.getElementById('book1TitleEn').value = c.book1TitleEn;
+  if (c.book1Desc) document.getElementById('book1Desc').value = c.book1Desc;
+  if (c.book1Badge) document.getElementById('book1Badge').value = c.book1Badge;
+  if (c.book2TitleAr) document.getElementById('book2TitleAr').value = c.book2TitleAr;
+  if (c.book2TitleEn) document.getElementById('book2TitleEn').value = c.book2TitleEn;
+  if (c.book2Desc) document.getElementById('book2Desc').value = c.book2Desc;
+  if (c.book3TitleAr) document.getElementById('book3TitleAr').value = c.book3TitleAr;
+  if (c.book3TitleEn) document.getElementById('book3TitleEn').value = c.book3TitleEn;
+  if (c.book3Desc) document.getElementById('book3Desc').value = c.book3Desc;
+  // Contact
+  if (c.contactEmail) document.getElementById('contactEmail').value = c.contactEmail;
+  if (c.contactInstagram) document.getElementById('contactInstagram').value = c.contactInstagram;
+  if (c.contactTwitter) document.getElementById('contactTwitter').value = c.contactTwitter;
+  if (c.contactDescAr) document.getElementById('contactDescAr').value = c.contactDescAr;
+  if (c.contactDescEn) document.getElementById('contactDescEn').value = c.contactDescEn;
+}
+
+async function saveContent(section) {
+  const data = {};
+  if (section === 'hero') {
+    data.heroNameAr = document.getElementById('heroNameAr').value;
+    data.heroNameEn = document.getElementById('heroNameEn').value;
+    data.heroTaglineAr = document.getElementById('heroTaglineAr').value;
+    data.heroTaglineEn = document.getElementById('heroTaglineEn').value;
+    data.heroQuoteAr = document.getElementById('heroQuoteAr').value;
+    data.heroQuoteEn = document.getElementById('heroQuoteEn').value;
+  } else if (section === 'about') {
+    data.aboutText1Ar = document.getElementById('aboutText1Ar').value;
+    data.aboutHighlightAr = document.getElementById('aboutHighlightAr').value;
+    data.aboutText2Ar = document.getElementById('aboutText2Ar').value;
+    data.aboutText1En = document.getElementById('aboutText1En').value;
+    data.aboutText2En = document.getElementById('aboutText2En').value;
+  } else if (section === 'books') {
+    data.book1TitleAr = document.getElementById('book1TitleAr').value;
+    data.book1TitleEn = document.getElementById('book1TitleEn').value;
+    data.book1Desc = document.getElementById('book1Desc').value;
+    data.book1Badge = document.getElementById('book1Badge').value;
+    data.book2TitleAr = document.getElementById('book2TitleAr').value;
+    data.book2TitleEn = document.getElementById('book2TitleEn').value;
+    data.book2Desc = document.getElementById('book2Desc').value;
+    data.book3TitleAr = document.getElementById('book3TitleAr').value;
+    data.book3TitleEn = document.getElementById('book3TitleEn').value;
+    data.book3Desc = document.getElementById('book3Desc').value;
+  } else if (section === 'contact') {
+    data.contactEmail = document.getElementById('contactEmail').value;
+    data.contactInstagram = document.getElementById('contactInstagram').value;
+    data.contactTwitter = document.getElementById('contactTwitter').value;
+    data.contactDescAr = document.getElementById('contactDescAr').value;
+    data.contactDescEn = document.getElementById('contactDescEn').value;
+  }
 
   try {
-    await fetch('/api/posts', {
-      method: 'DELETE',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${token}`
-      },
-      body: JSON.stringify({ id })
-    });
-    loadPosts();
-    showToast('تم حذف التدوينة');
-  } catch (e) {
-    showToast('حدث خطأ');
-  }
+    await fetch('/api/content', { method: 'PUT', headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` }, body: JSON.stringify(data) });
+    showToast('تم الحفظ بنجاح');
+  } catch (e) { showToast('حدث خطأ'); }
 }
 
-function clearForm() {
-  document.getElementById('editPostId').value = '';
-  document.getElementById('postTitleAr').value = '';
-  document.getElementById('postTitleEn').value = '';
-  document.getElementById('postBodyAr').value = '';
-  document.getElementById('postBodyEn').value = '';
+// ===== PASSWORD =====
+async function changePassword() {
+  const current = document.getElementById('currentPw').value;
+  const newPw = document.getElementById('newPw').value;
+  const confirm = document.getElementById('confirmPw').value;
+  if (!current || !newPw) { showToast('الرجاء ملء جميع الحقول'); return; }
+  if (newPw !== confirm) { showToast('كلمة المرور الجديدة غير متطابقة'); return; }
+  try {
+    const res = await fetch('/api/password', { method: 'PUT', headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` }, body: JSON.stringify({ current, newPassword: newPw }) });
+    const data = await res.json();
+    if (data.success) { showToast('تم تغيير كلمة المرور'); document.getElementById('currentPw').value = ''; document.getElementById('newPw').value = ''; document.getElementById('confirmPw').value = ''; }
+    else { showToast(data.error || 'حدث خطأ'); }
+  } catch (e) { showToast('حدث خطأ'); }
 }
 
-function showToast(msg) {
-  const t = document.getElementById('toast');
-  t.textContent = msg;
-  t.classList.add('show');
-  setTimeout(() => t.classList.remove('show'), 3000);
-}
+function showToast(msg) { const t = document.getElementById('toast'); t.textContent = msg; t.classList.add('show'); setTimeout(() => t.classList.remove('show'), 3000); }
 </script>
 </body>
 </html>
